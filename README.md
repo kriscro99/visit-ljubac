@@ -2,6 +2,13 @@
 
 Glamping šatori, kućice na drvetu i parcele za šatore u Ljubaču, 50 m od mora.
 
+## Brand
+
+Crno, bijelo i crveni akcent (`#e5212d`). Logo VISITLJUBAČ ima srca umjesto točkica na „i” i umjesto kvačice na „Č”.
+Logotipi su u mapi `brand/`: SVG (vektor, za tisak) i PNG s prozirnom pozadinom, u crnoj i bijeloj varijanti
+te kao vodoravni i složeni (dva reda) logo. Tu je i ikona aplikacije (`icon-512.png`).
+Fontovi: Titan One (naslovi), Geist i Geist Mono (tekst).
+
 **Stranica:** https://kriscro99.github.io/visit-ljubac/
 
 ## Rezervacije
@@ -47,7 +54,9 @@ možete dodati poveznicu na izvornu objavu u grupi. Gumb "Pratite nas na Faceboo
 ```
 index.html        stranica i postavke (VL_CONFIG)
 css/style.css     dizajn i animacije
-js/main.js        kalendar, rezervacija, galerije, novosti
+js/main.js        animacije (GSAP), kalendar, rezervacija, galerije, novosti
+js/vendor/        GSAP, ScrollTrigger, SplitText, Lenis (lokalne kopije)
+brand/            logotipi (SVG + PNG) i ikona
 data/novosti.json objave za news feed
 img/              optimizirane fotografije (WebP)
 ```

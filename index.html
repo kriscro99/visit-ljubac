@@ -5,14 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Visit Ljubač · Glamping, kućice na drvetu i kamp uz more</title>
   <meta name="description" content="Visit Ljubač — glamping šatori, kućice na drvetu i parcele za šatore u masliniku, 50 m od mora u Ljubaču kraj Zadra. Pogled na Velebit, zalasci sunca, sauna, SUP i avanture u prirodi. Rezervirajte online.">
-  <meta name="theme-color" content="#0e1812">
+  <meta name="theme-color" content="#ffffff">
   <meta name="format-detection" content="telephone=no">
   <link rel="canonical" href="https://kriscro99.github.io/visit-ljubac/">
 
   <meta property="og:type" content="website">
   <meta property="og:locale" content="hr_HR">
   <meta property="og:site_name" content="Visit Ljubač">
-  <meta property="og:title" content="Visit Ljubač · Ljubav na prvi pogled zove se Ljubač">
+  <meta property="og:title" content="Visit Ljubač · Ljubav na prvi pogled">
   <meta property="og:description" content="Kućice na drvetu i glamping šatori u masliniku, 50 m od Jadranskog mora. Rezervirajte svoj odmor u prirodi.">
   <meta property="og:url" content="https://kriscro99.github.io/visit-ljubac/">
   <meta property="og:image" content="https://kriscro99.github.io/visit-ljubac/og-image.jpg">
@@ -20,14 +20,15 @@
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
 
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="icon" href="favicon.png" type="image/png">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..600&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
-  <link rel="preload" as="image" href="img/hero/hero-1-m.webp" media="(max-aspect-ratio: 4/5)">
-  <link rel="preload" as="image" href="img/hero/hero-1.webp" media="(min-aspect-ratio: 4/5)">
+  <link href="https://fonts.googleapis.com/css2?family=Titan+One&family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="img/hero/hero-1-m-bw.webp" media="(max-aspect-ratio: 4/5)">
+  <link rel="preload" as="image" href="img/hero/hero-1-bw.webp" media="(min-aspect-ratio: 4/5)">
   <link rel="stylesheet" href="css/style.css">
 
   <script>
@@ -45,17 +46,21 @@
     (function () {
       var r = document.documentElement;
       r.classList.add('js');
-      // Failsafe: ako se skripta ne učita, sadržaj se svejedno prikazuje
+      // Failsafe: ako se skripte ne učitaju, sadržaj se svejedno prikazuje
       setTimeout(function () {
         if (!window.VL_OK) {
           r.classList.remove('js', 'is-loading');
-          r.classList.add('is-ready');
+          r.classList.add('is-ready', 'no-motion');
           var l = document.getElementById('loader');
           if (l) l.remove();
         }
-      }, 5000);
+      }, 6000);
     })();
   </script>
+  <script src="js/vendor/gsap.min.js" defer></script>
+  <script src="js/vendor/ScrollTrigger.min.js" defer></script>
+  <script src="js/vendor/SplitText.min.js" defer></script>
+  <script src="js/vendor/lenis.min.js" defer></script>
   <script src="js/main.js" defer></script>
 
   <script type="application/ld+json">
@@ -66,22 +71,13 @@
     "description": "Glamping šatori, kućice na drvetu i parcele za šatore u masliniku, 50 m od mora u Ljubaču.",
     "url": "https://kriscro99.github.io/visit-ljubac/",
     "image": "https://kriscro99.github.io/visit-ljubac/og-image.jpg",
+    "logo": "https://kriscro99.github.io/visit-ljubac/brand/icon-512.png",
     "telephone": "+385916179002",
     "email": "visitljubac@ulixtravel.com",
     "petsAllowed": true,
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Ljubač 6",
-      "postalCode": "23248",
-      "addressLocality": "Ražanac",
-      "addressCountry": "HR"
-    },
+    "address": { "@type": "PostalAddress", "streetAddress": "Ljubač 6", "postalCode": "23248", "addressLocality": "Ražanac", "addressCountry": "HR" },
     "geo": { "@type": "GeoCoordinates", "latitude": 44.271815, "longitude": 15.289499 },
-    "parentOrganization": {
-      "@type": "Organization",
-      "name": "ULIX d.o.o.",
-      "address": "Miramarska cesta 26, 10000 Zagreb, Hrvatska"
-    }
+    "parentOrganization": { "@type": "Organization", "name": "ULIX d.o.o.", "address": "Miramarska cesta 26, 10000 Zagreb, Hrvatska" }
   }
   </script>
 </head>
@@ -89,30 +85,18 @@
 
 <!-- ============ LOADER ============ -->
 <div class="loader" id="loader" aria-hidden="true">
-  <div class="loader__inner">
-    <svg class="loader__mark" viewBox="0 0 64 64" fill="none">
-      <path class="loader__tent" d="M32 6 6 56h52L32 6Z" />
-      <path class="loader__heart" d="M32 50s-10-6.2-10-13.4a5.6 5.6 0 0 1 10-3.5 5.6 5.6 0 0 1 10 3.5C42 43.8 32 50 32 50Z" />
-    </svg>
-    <div class="loader__word"><span>Visit</span><em>Ljubač</em></div>
-    <div class="loader__tag">explore yourself</div>
-  </div>
+  <div class="loader__logo"><svg class="logo logo--stack" aria-hidden="true" focusable="false" viewBox="0 0 3826 2210"><g class="lg-letters"><path class="lg-l" style="--i:0" d="M537 295Q537 283 563 267Q589 250 636 237Q684 224 740 224Q796 224 822 240Q848 256 850 275L885 639H899L930 284Q933 256 998 240Q1063 224 1119 224Q1175 224 1202 234Q1229 243 1236 253Q1244 263 1244 272Q1244 280 1229 319Q1215 357 1199 401Q1146 541 1020 903Q1009 934 848 934Q798 934 782 927Q766 920 760 903Q701 733 619 517Q537 301 537 295Z"/><path class="lg-l" style="--i:1" d="M1572 400V910Q1572 921 1514 928Q1457 934 1396 934Q1336 934 1318 929Q1301 923 1301 910V418Q1301 396 1358 375Q1415 354 1481 354Q1572 354 1572 400Z"/><path class="lg-l" style="--i:2" d="M1644 865Q1644 809 1660 749Q1676 688 1698 688Q1702 688 1781 715Q1860 742 1900 742Q1940 742 1952 734Q1964 725 1964 709Q1964 693 1942 681Q1920 668 1887 659Q1854 649 1815 631Q1777 613 1744 591Q1711 569 1689 529Q1667 488 1667 436Q1667 214 1932 214Q2031 214 2103 227Q2175 239 2204 255Q2234 270 2234 285Q2234 337 2209 397Q2185 457 2162 457Q2158 457 2136 448Q2070 419 2026 419Q1983 419 1967 427Q1952 435 1952 452Q1952 468 1974 479Q1996 489 2028 498Q2061 506 2099 524Q2138 541 2171 565Q2204 588 2226 631Q2248 674 2248 731Q2248 791 2217 840Q2198 870 2168 892Q2138 914 2084 929Q2031 943 1946 943Q1862 943 1786 929Q1710 915 1677 898Q1644 881 1644 865Z"/><path class="lg-l" style="--i:3" d="M2591 400V910Q2591 921 2533 928Q2476 934 2415 934Q2355 934 2337 929Q2320 923 2320 910V418Q2320 396 2377 375Q2434 354 2500 354Q2591 354 2591 400Z"/><path class="lg-l" style="--i:4" d="M2824 910V480H2685Q2674 480 2666 452Q2658 424 2658 369Q2658 313 2670 269Q2682 224 2702 224H3243Q3258 224 3263 252Q3269 280 3269 333Q3269 386 3258 433Q3247 480 3228 480H3103V910Q3103 921 3041 928Q2980 934 2918 934Q2857 934 2840 929Q2824 923 2824 910Z"/><path class="lg-l" style="--i:5" d="M112 2047Q62 2047 45 2041Q28 2036 28 2023V1401Q28 1379 86 1357Q144 1336 216 1336Q280 1336 300 1363Q307 1373 307 1383V1826Q429 1818 491 1818Q512 1818 512 1884Q512 1951 503 1999Q494 2047 479 2047Z"/><path class="lg-l" style="--i:6" d="M586 2155Q554 2128 554 2071Q554 1989 596 1989Q609 1989 616 1985Q635 1976 635 1923V1402Q635 1380 693 1358Q750 1337 815 1337Q914 1337 914 1384V1937Q914 2006 908 2047Q902 2088 883 2121Q863 2155 826 2168Q788 2182 741 2182Q693 2182 671 2180Q649 2179 625 2172Q600 2166 586 2155Z"/><path class="lg-l" style="--i:7" d="M1006 1768V1401Q1006 1376 1063 1356Q1119 1336 1194 1336Q1254 1336 1272 1359Q1285 1377 1285 1390V1688Q1285 1801 1294 1837Q1302 1874 1330 1874Q1358 1874 1366 1838Q1373 1803 1373 1687V1401Q1373 1376 1430 1356Q1486 1336 1560 1336Q1623 1336 1640 1359Q1652 1377 1652 1390V1768Q1652 1912 1570 1983Q1487 2055 1331 2055Q1174 2055 1090 1983Q1006 1912 1006 1768Z"/><path class="lg-l" style="--i:8" d="M2047 2047H1828Q1778 2047 1761 2040Q1744 2033 1744 2018V1375Q1744 1327 2033 1327Q2199 1327 2262 1359Q2326 1392 2344 1443Q2354 1473 2354 1513Q2354 1591 2328 1630Q2301 1669 2270 1674Q2317 1684 2348 1720Q2379 1756 2379 1842Q2379 1942 2318 1990Q2265 2032 2156 2043Q2110 2047 2047 2047ZM2048 1611Q2099 1611 2099 1543Q2099 1509 2086 1492Q2072 1476 2055 1476H2023V1611ZM2023 1898H2048Q2099 1898 2099 1830Q2099 1796 2086 1779Q2072 1763 2055 1763H2023Z"/><path class="lg-l" style="--i:9" d="M2431 1999Q2431 1975 2520 1692Q2609 1410 2622 1367Q2627 1354 2703 1345Q2778 1337 2865 1337Q2951 1337 2960 1367Q3149 1995 3149 2005Q3149 2015 3137 2025Q3109 2047 3026 2047Q2849 2047 2845 2005L2838 1940H2742L2737 1996Q2735 2025 2707 2036Q2678 2047 2604 2047Q2530 2047 2481 2033Q2431 2020 2431 1999ZM2817 1750 2802 1570H2780L2763 1750Z"/><path class="lg-l" style="--i:10" d="M3252 1917Q3201 1831 3201 1695Q3201 1604 3230 1534Q3258 1464 3299 1426Q3339 1388 3391 1365Q3475 1327 3560 1327Q3682 1327 3735 1347Q3759 1356 3778 1375Q3797 1394 3797 1430Q3797 1466 3780 1521Q3762 1576 3729 1576Q3719 1576 3655 1560Q3591 1544 3568 1544Q3533 1544 3509 1583Q3484 1622 3484 1694Q3484 1766 3506 1806Q3527 1846 3562 1846Q3587 1846 3653 1825Q3718 1805 3729 1805Q3760 1805 3778 1862Q3795 1919 3795 1954Q3795 1989 3774 2009Q3752 2030 3712 2039Q3672 2049 3631 2052Q3589 2056 3550 2056Q3510 2056 3489 2054Q3467 2052 3432 2044Q3397 2036 3368 2022Q3339 2008 3307 1981Q3274 1954 3252 1917Z"/></g><g class="lg-hearts"><path class="lg-h" style="--h:0" d="M1436 115C1436 60 1391 28 1350 28C1301 28 1263 70 1263 122C1263 198 1357 257 1436 316C1516 257 1610 198 1610 122C1610 70 1572 28 1523 28C1481 28 1436 60 1436 115Z"/><path class="lg-h" style="--h:1" d="M2455 115C2455 60 2410 28 2369 28C2320 28 2282 70 2282 122C2282 198 2376 257 2455 316C2535 257 2629 198 2629 122C2629 70 2591 28 2542 28C2500 28 2455 60 2455 115Z"/><path class="lg-h" style="--h:2" d="M3508 1073C3508 1018 3463 987 3421 987C3373 987 3335 1028 3335 1080C3335 1157 3428 1216 3508 1275C3588 1216 3682 1157 3682 1080C3682 1028 3643 987 3595 987C3553 987 3508 1018 3508 1073Z"/></g></svg></div>
+  <div class="loader__bar mono"><span>Visit Ljubač</span><span class="loader__count"><b>0</b>%</span></div>
 </div>
 
-<div class="progress" aria-hidden="true"><span></span></div>
+<!-- Oznaka kursora (desktop) -->
+<div class="cursor" aria-hidden="true"><span class="cursor__label">Pogledaj</span></div>
 
 <!-- ============ HEADER ============ -->
-<header class="header" id="header">
-  <div class="header__inner">
-    <a href="#pocetna" class="logo" aria-label="Visit Ljubač — početna">
-      <svg class="logo__mark" viewBox="0 0 64 64" fill="none" aria-hidden="true">
-        <path d="M32 6 6 56h52L32 6Z" />
-        <path class="logo__heart" d="M32 50s-10-6.2-10-13.4a5.6 5.6 0 0 1 10-3.5 5.6 5.6 0 0 1 10 3.5C42 43.8 32 50 32 50Z" />
-      </svg>
-      <span class="logo__text"><span>Visit</span><em>Ljubač</em></span>
-    </a>
-
-    <nav class="nav" aria-label="Glavna navigacija">
+<header class="hdr" id="hdr">
+  <div class="hdr__inner">
+    <a class="hdr__logo" href="#top" aria-label="Visit Ljubač — početna"><svg class="logo logo--line" aria-hidden="true" focusable="false" viewBox="0 0 6630 1252"><g class="lg-letters"><path class="lg-l" style="--i:0" d="M28 449Q28 437 54 421Q80 404 128 391Q175 378 231 378Q287 378 313 394Q339 410 341 429L376 793H390L421 438Q424 410 489 394Q554 378 610 378Q666 378 693 388Q720 397 728 407Q735 417 735 426Q735 434 721 473Q706 511 690 555Q637 695 511 1057Q500 1088 339 1088Q289 1088 273 1081Q257 1074 251 1057Q192 887 110 671Q28 455 28 449Z"/><path class="lg-l" style="--i:1" d="M1063 554V1064Q1063 1075 1006 1082Q948 1088 888 1088Q827 1088 810 1083Q792 1077 792 1064V572Q792 550 849 529Q906 508 972 508Q1063 508 1063 554Z"/><path class="lg-l" style="--i:2" d="M1135 1019Q1135 963 1151 903Q1167 842 1189 842Q1193 842 1272 869Q1351 896 1391 896Q1431 896 1443 888Q1455 879 1455 863Q1455 847 1433 835Q1411 822 1378 813Q1345 803 1307 785Q1268 767 1235 745Q1202 723 1180 683Q1158 642 1158 590Q1158 368 1423 368Q1522 368 1594 381Q1666 393 1696 409Q1725 424 1725 439Q1725 491 1701 551Q1676 611 1653 611Q1649 611 1627 602Q1561 573 1518 573Q1474 573 1459 581Q1443 589 1443 606Q1443 622 1465 633Q1487 643 1520 652Q1552 660 1591 678Q1629 695 1662 719Q1695 742 1717 785Q1739 828 1739 885Q1739 945 1708 994Q1689 1024 1659 1046Q1629 1068 1576 1083Q1522 1097 1438 1097Q1353 1097 1277 1083Q1201 1069 1168 1052Q1135 1035 1135 1019Z"/><path class="lg-l" style="--i:3" d="M2082 554V1064Q2082 1075 2025 1082Q1967 1088 1907 1088Q1846 1088 1829 1083Q1811 1077 1811 1064V572Q1811 550 1868 529Q1925 508 1991 508Q2082 508 2082 554Z"/><path class="lg-l" style="--i:4" d="M2315 1064V634H2176Q2165 634 2157 606Q2149 578 2149 523Q2149 467 2161 423Q2173 378 2193 378H2734Q2749 378 2755 406Q2760 434 2760 487Q2760 540 2749 587Q2738 634 2719 634H2594V1064Q2594 1075 2533 1082Q2471 1088 2410 1088Q2348 1088 2332 1083Q2315 1077 2315 1064Z"/><path class="lg-l" style="--i:5" d="M2916 1088Q2866 1088 2849 1083Q2832 1077 2832 1064V442Q2832 420 2890 399Q2948 377 3020 377Q3084 377 3104 404Q3111 414 3111 424V867Q3233 859 3295 859Q3316 859 3316 926Q3316 992 3307 1040Q3298 1088 3283 1088Z"/><path class="lg-l" style="--i:6" d="M3390 1196Q3358 1169 3358 1112Q3358 1030 3400 1030Q3413 1030 3420 1026Q3439 1017 3439 964V443Q3439 421 3497 400Q3554 378 3619 378Q3718 378 3718 425V978Q3718 1047 3712 1088Q3706 1129 3687 1163Q3667 1196 3630 1210Q3592 1223 3545 1223Q3497 1223 3475 1222Q3453 1220 3429 1214Q3404 1207 3390 1196Z"/><path class="lg-l" style="--i:7" d="M3810 809V442Q3810 417 3867 397Q3923 377 3998 377Q4058 377 4076 400Q4089 418 4089 431V729Q4089 842 4098 879Q4106 915 4134 915Q4162 915 4170 880Q4177 844 4177 728V442Q4177 417 4234 397Q4290 377 4364 377Q4427 377 4444 400Q4456 418 4456 431V809Q4456 953 4374 1025Q4291 1096 4135 1096Q3978 1096 3894 1025Q3810 953 3810 809Z"/><path class="lg-l" style="--i:8" d="M4851 1088H4632Q4582 1088 4565 1081Q4548 1074 4548 1059V416Q4548 368 4837 368Q5003 368 5066 400Q5130 433 5148 484Q5158 514 5158 554Q5158 632 5132 671Q5105 710 5074 715Q5121 725 5152 761Q5183 797 5183 883Q5183 983 5122 1031Q5069 1073 4960 1084Q4914 1088 4851 1088ZM4852 652Q4903 652 4903 584Q4903 550 4890 534Q4876 517 4859 517H4827V652ZM4827 939H4852Q4903 939 4903 871Q4903 837 4890 821Q4876 804 4859 804H4827Z"/><path class="lg-l" style="--i:9" d="M5235 1040Q5235 1016 5324 734Q5413 451 5426 408Q5431 395 5507 387Q5582 378 5669 378Q5755 378 5764 408Q5953 1036 5953 1046Q5953 1056 5941 1066Q5913 1088 5830 1088Q5653 1088 5649 1046L5642 981H5546L5541 1037Q5539 1066 5511 1077Q5482 1088 5408 1088Q5334 1088 5285 1075Q5235 1061 5235 1040ZM5621 791 5606 611H5584L5567 791Z"/><path class="lg-l" style="--i:10" d="M6056 958Q6005 872 6005 736Q6005 645 6034 575Q6062 505 6103 467Q6143 429 6195 406Q6279 368 6364 368Q6486 368 6539 388Q6563 397 6582 416Q6601 435 6601 471Q6601 507 6584 562Q6566 617 6533 617Q6523 617 6459 601Q6395 585 6372 585Q6337 585 6313 624Q6288 663 6288 735Q6288 807 6310 847Q6331 887 6366 887Q6391 887 6457 867Q6522 846 6533 846Q6564 846 6582 903Q6599 960 6599 995Q6599 1030 6578 1051Q6556 1071 6516 1081Q6476 1090 6435 1094Q6393 1097 6354 1097Q6314 1097 6293 1095Q6271 1093 6236 1085Q6201 1077 6172 1063Q6143 1049 6111 1022Q6078 995 6056 958Z"/></g><g class="lg-hearts"><path class="lg-h" style="--h:0" d="M928 269C928 213 883 182 841 182C793 182 754 224 754 276C754 352 848 411 928 470C1008 411 1101 352 1101 276C1101 224 1063 182 1015 182C973 182 928 213 928 269Z"/><path class="lg-h" style="--h:1" d="M1947 269C1947 213 1902 182 1860 182C1812 182 1773 224 1773 276C1773 352 1867 411 1947 470C2027 411 2120 352 2120 276C2120 224 2082 182 2034 182C1992 182 1947 213 1947 269Z"/><path class="lg-h" style="--h:2" d="M6312 115C6312 60 6267 28 6225 28C6177 28 6139 70 6139 122C6139 198 6232 257 6312 316C6392 257 6486 198 6486 122C6486 70 6447 28 6399 28C6357 28 6312 60 6312 115Z"/></g></svg></a>
+    <nav class="hdr__nav" aria-label="Glavna navigacija">
       <a href="#o-nama">O nama</a>
       <a href="#smjestaj">Smještaj</a>
       <a href="#dozivljaji">Doživljaji</a>
@@ -120,35 +104,29 @@
       <a href="#novosti">Novosti</a>
       <a href="#kontakt">Kontakt</a>
     </nav>
-
-    <div class="header__actions">
-      <a class="header__phone" href="tel:+385916179002" aria-label="Nazovite nas">
-        <svg><use href="#i-phone"/></svg><span>+385 91 617 9002</span>
-      </a>
-      <a href="#rezervacija" class="btn btn--sun btn--sm" data-magnetic>Rezerviraj</a>
-      <button class="burger" id="burger" aria-label="Otvori izbornik" aria-expanded="false" aria-controls="menu">
-        <span></span><span></span>
-      </button>
+    <div class="hdr__right">
+      <a class="hdr__tel" href="tel:+385916179002">+385 91 617 9002</a>
+      <a class="btn btn--red btn--sm" href="#rezervacija" data-roll data-burst>Rezerviraj</a>
+      <button class="burger" id="burger" aria-label="Otvori izbornik" aria-expanded="false" aria-controls="menu"><span></span><span></span></button>
     </div>
   </div>
 </header>
 
 <!-- Mobilni izbornik -->
 <div class="menu" id="menu" aria-hidden="true">
-  <div class="menu__bg"></div>
   <nav class="menu__nav" aria-label="Mobilna navigacija">
-    <a href="#o-nama" style="--i:0"><small>01</small>O nama</a>
-    <a href="#smjestaj" style="--i:1"><small>02</small>Smještaj</a>
-    <a href="#dozivljaji" style="--i:2"><small>03</small>Doživljaji</a>
-    <a href="#okolica" style="--i:3"><small>04</small>Okolica</a>
-    <a href="#novosti" style="--i:4"><small>05</small>Novosti</a>
-    <a href="#kontakt" style="--i:5"><small>06</small>Kontakt</a>
+    <a href="#o-nama"><span class="mono">01</span>O nama</a>
+    <a href="#smjestaj"><span class="mono">02</span>Smještaj</a>
+    <a href="#dozivljaji"><span class="mono">03</span>Doživljaji</a>
+    <a href="#okolica"><span class="mono">04</span>Okolica</a>
+    <a href="#novosti"><span class="mono">05</span>Novosti</a>
+    <a href="#kontakt"><span class="mono">06</span>Kontakt</a>
   </nav>
-  <div class="menu__foot" style="--i:6">
-    <a href="#rezervacija" class="btn btn--sun btn--block">Rezervirajte boravak <svg><use href="#i-arrow-r"/></svg></a>
-    <div class="menu__contact">
-      <a href="tel:+385916179002"><svg><use href="#i-phone"/></svg>+385 91 617 9002</a>
-      <a href="mailto:visitljubac@ulixtravel.com"><svg><use href="#i-mail"/></svg>visitljubac@ulixtravel.com</a>
+  <div class="menu__foot">
+    <a href="#rezervacija" class="btn btn--red btn--lg btn--block" data-burst>Rezervirajte boravak</a>
+    <div class="menu__contact mono">
+      <a href="tel:+385916179002">+385 91 617 9002</a>
+      <a href="mailto:visitljubac@ulixtravel.com">visitljubac@ulixtravel.com</a>
     </div>
   </div>
 </div>
@@ -156,737 +134,476 @@
 <main>
 
 <!-- ============ HERO ============ -->
-<section class="hero" id="pocetna">
-  <div class="hero__slides" aria-hidden="true">
-    <div class="hero__slide is-active" data-title="Kamp iz zraka">
+<section class="hero" id="top">
+  <div class="hero__sticky">
+    <div class="hero__brand">
+      <div class="hero__logo hero__logo--line"><svg class="logo logo--line" aria-hidden="true" focusable="false" viewBox="0 0 6630 1252"><g class="lg-letters"><path class="lg-l" style="--i:0" d="M28 449Q28 437 54 421Q80 404 128 391Q175 378 231 378Q287 378 313 394Q339 410 341 429L376 793H390L421 438Q424 410 489 394Q554 378 610 378Q666 378 693 388Q720 397 728 407Q735 417 735 426Q735 434 721 473Q706 511 690 555Q637 695 511 1057Q500 1088 339 1088Q289 1088 273 1081Q257 1074 251 1057Q192 887 110 671Q28 455 28 449Z"/><path class="lg-l" style="--i:1" d="M1063 554V1064Q1063 1075 1006 1082Q948 1088 888 1088Q827 1088 810 1083Q792 1077 792 1064V572Q792 550 849 529Q906 508 972 508Q1063 508 1063 554Z"/><path class="lg-l" style="--i:2" d="M1135 1019Q1135 963 1151 903Q1167 842 1189 842Q1193 842 1272 869Q1351 896 1391 896Q1431 896 1443 888Q1455 879 1455 863Q1455 847 1433 835Q1411 822 1378 813Q1345 803 1307 785Q1268 767 1235 745Q1202 723 1180 683Q1158 642 1158 590Q1158 368 1423 368Q1522 368 1594 381Q1666 393 1696 409Q1725 424 1725 439Q1725 491 1701 551Q1676 611 1653 611Q1649 611 1627 602Q1561 573 1518 573Q1474 573 1459 581Q1443 589 1443 606Q1443 622 1465 633Q1487 643 1520 652Q1552 660 1591 678Q1629 695 1662 719Q1695 742 1717 785Q1739 828 1739 885Q1739 945 1708 994Q1689 1024 1659 1046Q1629 1068 1576 1083Q1522 1097 1438 1097Q1353 1097 1277 1083Q1201 1069 1168 1052Q1135 1035 1135 1019Z"/><path class="lg-l" style="--i:3" d="M2082 554V1064Q2082 1075 2025 1082Q1967 1088 1907 1088Q1846 1088 1829 1083Q1811 1077 1811 1064V572Q1811 550 1868 529Q1925 508 1991 508Q2082 508 2082 554Z"/><path class="lg-l" style="--i:4" d="M2315 1064V634H2176Q2165 634 2157 606Q2149 578 2149 523Q2149 467 2161 423Q2173 378 2193 378H2734Q2749 378 2755 406Q2760 434 2760 487Q2760 540 2749 587Q2738 634 2719 634H2594V1064Q2594 1075 2533 1082Q2471 1088 2410 1088Q2348 1088 2332 1083Q2315 1077 2315 1064Z"/><path class="lg-l" style="--i:5" d="M2916 1088Q2866 1088 2849 1083Q2832 1077 2832 1064V442Q2832 420 2890 399Q2948 377 3020 377Q3084 377 3104 404Q3111 414 3111 424V867Q3233 859 3295 859Q3316 859 3316 926Q3316 992 3307 1040Q3298 1088 3283 1088Z"/><path class="lg-l" style="--i:6" d="M3390 1196Q3358 1169 3358 1112Q3358 1030 3400 1030Q3413 1030 3420 1026Q3439 1017 3439 964V443Q3439 421 3497 400Q3554 378 3619 378Q3718 378 3718 425V978Q3718 1047 3712 1088Q3706 1129 3687 1163Q3667 1196 3630 1210Q3592 1223 3545 1223Q3497 1223 3475 1222Q3453 1220 3429 1214Q3404 1207 3390 1196Z"/><path class="lg-l" style="--i:7" d="M3810 809V442Q3810 417 3867 397Q3923 377 3998 377Q4058 377 4076 400Q4089 418 4089 431V729Q4089 842 4098 879Q4106 915 4134 915Q4162 915 4170 880Q4177 844 4177 728V442Q4177 417 4234 397Q4290 377 4364 377Q4427 377 4444 400Q4456 418 4456 431V809Q4456 953 4374 1025Q4291 1096 4135 1096Q3978 1096 3894 1025Q3810 953 3810 809Z"/><path class="lg-l" style="--i:8" d="M4851 1088H4632Q4582 1088 4565 1081Q4548 1074 4548 1059V416Q4548 368 4837 368Q5003 368 5066 400Q5130 433 5148 484Q5158 514 5158 554Q5158 632 5132 671Q5105 710 5074 715Q5121 725 5152 761Q5183 797 5183 883Q5183 983 5122 1031Q5069 1073 4960 1084Q4914 1088 4851 1088ZM4852 652Q4903 652 4903 584Q4903 550 4890 534Q4876 517 4859 517H4827V652ZM4827 939H4852Q4903 939 4903 871Q4903 837 4890 821Q4876 804 4859 804H4827Z"/><path class="lg-l" style="--i:9" d="M5235 1040Q5235 1016 5324 734Q5413 451 5426 408Q5431 395 5507 387Q5582 378 5669 378Q5755 378 5764 408Q5953 1036 5953 1046Q5953 1056 5941 1066Q5913 1088 5830 1088Q5653 1088 5649 1046L5642 981H5546L5541 1037Q5539 1066 5511 1077Q5482 1088 5408 1088Q5334 1088 5285 1075Q5235 1061 5235 1040ZM5621 791 5606 611H5584L5567 791Z"/><path class="lg-l" style="--i:10" d="M6056 958Q6005 872 6005 736Q6005 645 6034 575Q6062 505 6103 467Q6143 429 6195 406Q6279 368 6364 368Q6486 368 6539 388Q6563 397 6582 416Q6601 435 6601 471Q6601 507 6584 562Q6566 617 6533 617Q6523 617 6459 601Q6395 585 6372 585Q6337 585 6313 624Q6288 663 6288 735Q6288 807 6310 847Q6331 887 6366 887Q6391 887 6457 867Q6522 846 6533 846Q6564 846 6582 903Q6599 960 6599 995Q6599 1030 6578 1051Q6556 1071 6516 1081Q6476 1090 6435 1094Q6393 1097 6354 1097Q6314 1097 6293 1095Q6271 1093 6236 1085Q6201 1077 6172 1063Q6143 1049 6111 1022Q6078 995 6056 958Z"/></g><g class="lg-hearts"><path class="lg-h" style="--h:0" d="M928 269C928 213 883 182 841 182C793 182 754 224 754 276C754 352 848 411 928 470C1008 411 1101 352 1101 276C1101 224 1063 182 1015 182C973 182 928 213 928 269Z"/><path class="lg-h" style="--h:1" d="M1947 269C1947 213 1902 182 1860 182C1812 182 1773 224 1773 276C1773 352 1867 411 1947 470C2027 411 2120 352 2120 276C2120 224 2082 182 2034 182C1992 182 1947 213 1947 269Z"/><path class="lg-h" style="--h:2" d="M6312 115C6312 60 6267 28 6225 28C6177 28 6139 70 6139 122C6139 198 6232 257 6312 316C6392 257 6486 198 6486 122C6486 70 6447 28 6399 28C6357 28 6312 60 6312 115Z"/></g></svg></div>
+      <div class="hero__logo hero__logo--stack"><svg class="logo logo--stack" aria-hidden="true" focusable="false" viewBox="0 0 3826 2210"><g class="lg-letters"><path class="lg-l" style="--i:0" d="M537 295Q537 283 563 267Q589 250 636 237Q684 224 740 224Q796 224 822 240Q848 256 850 275L885 639H899L930 284Q933 256 998 240Q1063 224 1119 224Q1175 224 1202 234Q1229 243 1236 253Q1244 263 1244 272Q1244 280 1229 319Q1215 357 1199 401Q1146 541 1020 903Q1009 934 848 934Q798 934 782 927Q766 920 760 903Q701 733 619 517Q537 301 537 295Z"/><path class="lg-l" style="--i:1" d="M1572 400V910Q1572 921 1514 928Q1457 934 1396 934Q1336 934 1318 929Q1301 923 1301 910V418Q1301 396 1358 375Q1415 354 1481 354Q1572 354 1572 400Z"/><path class="lg-l" style="--i:2" d="M1644 865Q1644 809 1660 749Q1676 688 1698 688Q1702 688 1781 715Q1860 742 1900 742Q1940 742 1952 734Q1964 725 1964 709Q1964 693 1942 681Q1920 668 1887 659Q1854 649 1815 631Q1777 613 1744 591Q1711 569 1689 529Q1667 488 1667 436Q1667 214 1932 214Q2031 214 2103 227Q2175 239 2204 255Q2234 270 2234 285Q2234 337 2209 397Q2185 457 2162 457Q2158 457 2136 448Q2070 419 2026 419Q1983 419 1967 427Q1952 435 1952 452Q1952 468 1974 479Q1996 489 2028 498Q2061 506 2099 524Q2138 541 2171 565Q2204 588 2226 631Q2248 674 2248 731Q2248 791 2217 840Q2198 870 2168 892Q2138 914 2084 929Q2031 943 1946 943Q1862 943 1786 929Q1710 915 1677 898Q1644 881 1644 865Z"/><path class="lg-l" style="--i:3" d="M2591 400V910Q2591 921 2533 928Q2476 934 2415 934Q2355 934 2337 929Q2320 923 2320 910V418Q2320 396 2377 375Q2434 354 2500 354Q2591 354 2591 400Z"/><path class="lg-l" style="--i:4" d="M2824 910V480H2685Q2674 480 2666 452Q2658 424 2658 369Q2658 313 2670 269Q2682 224 2702 224H3243Q3258 224 3263 252Q3269 280 3269 333Q3269 386 3258 433Q3247 480 3228 480H3103V910Q3103 921 3041 928Q2980 934 2918 934Q2857 934 2840 929Q2824 923 2824 910Z"/><path class="lg-l" style="--i:5" d="M112 2047Q62 2047 45 2041Q28 2036 28 2023V1401Q28 1379 86 1357Q144 1336 216 1336Q280 1336 300 1363Q307 1373 307 1383V1826Q429 1818 491 1818Q512 1818 512 1884Q512 1951 503 1999Q494 2047 479 2047Z"/><path class="lg-l" style="--i:6" d="M586 2155Q554 2128 554 2071Q554 1989 596 1989Q609 1989 616 1985Q635 1976 635 1923V1402Q635 1380 693 1358Q750 1337 815 1337Q914 1337 914 1384V1937Q914 2006 908 2047Q902 2088 883 2121Q863 2155 826 2168Q788 2182 741 2182Q693 2182 671 2180Q649 2179 625 2172Q600 2166 586 2155Z"/><path class="lg-l" style="--i:7" d="M1006 1768V1401Q1006 1376 1063 1356Q1119 1336 1194 1336Q1254 1336 1272 1359Q1285 1377 1285 1390V1688Q1285 1801 1294 1837Q1302 1874 1330 1874Q1358 1874 1366 1838Q1373 1803 1373 1687V1401Q1373 1376 1430 1356Q1486 1336 1560 1336Q1623 1336 1640 1359Q1652 1377 1652 1390V1768Q1652 1912 1570 1983Q1487 2055 1331 2055Q1174 2055 1090 1983Q1006 1912 1006 1768Z"/><path class="lg-l" style="--i:8" d="M2047 2047H1828Q1778 2047 1761 2040Q1744 2033 1744 2018V1375Q1744 1327 2033 1327Q2199 1327 2262 1359Q2326 1392 2344 1443Q2354 1473 2354 1513Q2354 1591 2328 1630Q2301 1669 2270 1674Q2317 1684 2348 1720Q2379 1756 2379 1842Q2379 1942 2318 1990Q2265 2032 2156 2043Q2110 2047 2047 2047ZM2048 1611Q2099 1611 2099 1543Q2099 1509 2086 1492Q2072 1476 2055 1476H2023V1611ZM2023 1898H2048Q2099 1898 2099 1830Q2099 1796 2086 1779Q2072 1763 2055 1763H2023Z"/><path class="lg-l" style="--i:9" d="M2431 1999Q2431 1975 2520 1692Q2609 1410 2622 1367Q2627 1354 2703 1345Q2778 1337 2865 1337Q2951 1337 2960 1367Q3149 1995 3149 2005Q3149 2015 3137 2025Q3109 2047 3026 2047Q2849 2047 2845 2005L2838 1940H2742L2737 1996Q2735 2025 2707 2036Q2678 2047 2604 2047Q2530 2047 2481 2033Q2431 2020 2431 1999ZM2817 1750 2802 1570H2780L2763 1750Z"/><path class="lg-l" style="--i:10" d="M3252 1917Q3201 1831 3201 1695Q3201 1604 3230 1534Q3258 1464 3299 1426Q3339 1388 3391 1365Q3475 1327 3560 1327Q3682 1327 3735 1347Q3759 1356 3778 1375Q3797 1394 3797 1430Q3797 1466 3780 1521Q3762 1576 3729 1576Q3719 1576 3655 1560Q3591 1544 3568 1544Q3533 1544 3509 1583Q3484 1622 3484 1694Q3484 1766 3506 1806Q3527 1846 3562 1846Q3587 1846 3653 1825Q3718 1805 3729 1805Q3760 1805 3778 1862Q3795 1919 3795 1954Q3795 1989 3774 2009Q3752 2030 3712 2039Q3672 2049 3631 2052Q3589 2056 3550 2056Q3510 2056 3489 2054Q3467 2052 3432 2044Q3397 2036 3368 2022Q3339 2008 3307 1981Q3274 1954 3252 1917Z"/></g><g class="lg-hearts"><path class="lg-h" style="--h:0" d="M1436 115C1436 60 1391 28 1350 28C1301 28 1263 70 1263 122C1263 198 1357 257 1436 316C1516 257 1610 198 1610 122C1610 70 1572 28 1523 28C1481 28 1436 60 1436 115Z"/><path class="lg-h" style="--h:1" d="M2455 115C2455 60 2410 28 2369 28C2320 28 2282 70 2282 122C2282 198 2376 257 2455 316C2535 257 2629 198 2629 122C2629 70 2591 28 2542 28C2500 28 2455 60 2455 115Z"/><path class="lg-h" style="--h:2" d="M3508 1073C3508 1018 3463 987 3421 987C3373 987 3335 1028 3335 1080C3335 1157 3428 1216 3508 1275C3588 1216 3682 1157 3682 1080C3682 1028 3643 987 3595 987C3553 987 3508 1018 3508 1073Z"/></g></svg></div>
+      <div class="hero__meta mono">
+        <span>(Glamping)</span><span>(Kućice na drvetu)</span><span>(Kamp uz more)</span>
+      </div>
+    </div>
+
+    <div class="hero__win">
+      <picture>
+        <source media="(max-aspect-ratio: 4/5)" srcset="img/hero/hero-1-m-bw.webp">
+        <img class="hero__bw" src="img/hero/hero-1-bw.webp" alt="" fetchpriority="high">
+      </picture>
       <picture>
         <source media="(max-aspect-ratio: 4/5)" srcset="img/hero/hero-1-m.webp">
-        <img src="img/hero/hero-1.webp" alt="" fetchpriority="high">
+        <img class="hero__color" src="img/hero/hero-1.webp" alt="Pogled iz zraka na glamping kamp Visit Ljubač uz more">
       </picture>
+      <div class="hero__shade"></div>
     </div>
-    <div class="hero__slide" data-title="Uvala Ljubač">
-      <picture>
-        <source media="(max-aspect-ratio: 4/5)" data-srcset="img/hero/hero-2-m.webp">
-        <img data-src="img/hero/hero-2.webp" alt="">
-      </picture>
-    </div>
-    <div class="hero__slide" data-title="Zalazak sunca">
-      <picture>
-        <source media="(max-aspect-ratio: 4/5)" data-srcset="img/hero/hero-3-m.webp">
-        <img data-src="img/hero/hero-3.webp" alt="">
-      </picture>
-    </div>
-  </div>
-  <div class="hero__shade"></div>
-  <canvas class="hero__fireflies" aria-hidden="true"></canvas>
 
-  <div class="hero__content container">
-    <p class="hero__eyebrow" data-hero="1">
-      <span class="dot"></span> Glamping · Kućice na drvetu<span class="hide-sm"> · Kamp uz more</span>
-    </p>
-    <h1 class="hero__title" aria-label="Ljubav na prvi pogled zove se Ljubač">
-      <span class="line"><span class="word">Ljubav</span> <span class="word">na</span> <span class="word">prvi</span> <span class="word">pogled</span></span>
-      <span class="line"><span class="word">zove</span> <span class="word">se</span> <em class="word">Ljubač</em></span>
-    </h1>
-    <p class="hero__lead" data-hero="2">
-      Kućice na drvetu i glamping šatori u masliniku, samo 50&nbsp;metara od Jadranskog mora —
-      s pogledom na Velebit i zalascima sunca koji ostavljaju bez daha.
-    </p>
-    <div class="hero__ctas" data-hero="3">
-      <a href="#rezervacija" class="btn btn--sun btn--lg" data-magnetic>
-        Rezervirajte boravak <svg><use href="#i-arrow-r"/></svg>
-      </a>
-      <a href="#smjestaj" class="btn btn--glass btn--lg">Istražite smještaj</a>
+    <div class="hero__sticker" aria-hidden="true">
+      <svg class="hero__ring" viewBox="0 0 200 200">
+        <defs><path id="ring" d="M100 100m-72 0a72 72 0 1 1 144 0a72 72 0 1 1-144 0"/></defs>
+        <text><textPath href="#ring" textLength="448" lengthAdjust="spacing">LJUBAV NA PRVI POGLED ✦ LJUBAV NA PRVI POGLED ✦</textPath></text>
+      </svg>
+      <span class="hero__core"><b>50 m</b><small>do mora</small></span>
     </div>
-  </div>
 
-  <!-- Brza pretraga (desktop) -->
-  <form class="quick container" id="quick" data-hero="4" autocomplete="off">
-    <div class="quick__inner">
-      <label class="quick__field quick__field--stay">
-        <span class="quick__label">Smještaj</span>
-        <select name="stay" id="quickStay">
-          <option value="bell">Glamping Bell Tent West</option>
-          <option value="tree">Kućice na drvetu</option>
-          <option value="pitch">Parcela za šator</option>
-        </select>
-      </label>
-      <button type="button" class="quick__field quick__field--dates" id="quickDates" aria-haspopup="dialog">
-        <span class="quick__label">Dolazak — Odlazak</span>
-        <span class="quick__value" data-bind="range">Odaberite datume</span>
-      </button>
-      <div class="quick__field quick__field--guests">
-        <span class="quick__label">Gosti</span>
-        <div class="stepper stepper--light" data-stepper>
-          <button type="button" data-step="-1" aria-label="Manje gostiju"><svg><use href="#i-minus"/></svg></button>
-          <output data-bind="guests">2</output>
-          <button type="button" data-step="1" aria-label="Više gostiju"><svg><use href="#i-plus"/></svg></button>
+    <div class="hero__copy">
+      <p class="hero__kicker mono">Ljubač · Zadar · Hrvatska</p>
+      <h1 class="hero__title">
+        <span class="ln"><span>Ljubav na prvi</span></span>
+        <span class="ln"><span>pogled zove se</span></span>
+        <span class="ln"><span>Ljubač<svg class="hero__heart" aria-hidden="true"><use href="#i-heart"/></svg></span></span>
+      </h1>
+      <div class="hero__foot">
+        <p class="hero__lead">Kućice na drvetu i glamping šatori u masliniku, samo 50&nbsp;metara od Jadranskog mora — s pogledom na Velebit.</p>
+        <div class="hero__ctas">
+          <a href="#rezervacija" class="btn btn--red btn--lg" data-roll data-burst data-magnetic>Rezervirajte boravak</a>
+          <a href="#smjestaj" class="btn btn--glass btn--lg" data-roll>Istražite smještaj</a>
         </div>
       </div>
-      <button type="submit" class="btn btn--sun quick__go">
-        <svg><use href="#i-calendar"/></svg> Provjeri dostupnost
-      </button>
     </div>
-    <div class="popover" id="quickPop" role="dialog" aria-label="Odabir datuma">
-      <div class="calendar" data-calendar="quick" data-months="2"></div>
-      <div class="popover__foot">
-        <span data-bind="nights">Odaberite datum dolaska</span>
-        <button type="button" class="btn btn--dark btn--sm" data-close-pop>Gotovo</button>
-      </div>
-    </div>
-  </form>
 
-  <div class="hero__bottom container">
-    <div class="hero__dots" aria-hidden="true">
-      <button class="is-active"><i></i><span>Kamp iz zraka</span></button>
-      <button><i></i><span>Uvala Ljubač</span></button>
-      <button><i></i><span>Zalazak sunca</span></button>
-    </div>
-    <a href="#o-nama" class="hero__scroll" aria-label="Pomaknite se prema dolje">
-      <span>Scroll</span><i></i>
-    </a>
+    <div class="hero__hint mono" aria-hidden="true"><span>Skrolajte</span><i></i></div>
+    <div class="hero__coords mono" aria-hidden="true">44.27°N — 15.29°E</div>
   </div>
-
-  <svg class="hero__wave" viewBox="0 0 2880 120" preserveAspectRatio="none" aria-hidden="true">
-    <path d="M0 64c240 0 240-48 480-48s240 48 480 48 240-48 480-48 240 48 480 48 240-48 480-48 240 48 480 48v56H0z"/>
-  </svg>
 </section>
 
 <!-- ============ TRAKA ============ -->
-<div class="ticker" aria-hidden="true">
-  <div class="ticker__track">
-    <span>Kućice na drvetu</span><i>✦</i><span>Glamping šatori</span><i>✦</i><span>50 m od mora</span><i>✦</i><span>Maslinik i borova šuma</span><i>✦</i><span>Pogled na Velebit</span><i>✦</i><span>Zalasci sunca</span><i>✦</i><span>Ljubimci dobrodošli</span><i>✦</i>
-    <span>Kućice na drvetu</span><i>✦</i><span>Glamping šatori</span><i>✦</i><span>50 m od mora</span><i>✦</i><span>Maslinik i borova šuma</span><i>✦</i><span>Pogled na Velebit</span><i>✦</i><span>Zalasci sunca</span><i>✦</i><span>Ljubimci dobrodošli</span><i>✦</i>
-  </div>
-</div>
-
-<!-- ============ UVOD / O NAMA ============ -->
-<section class="intro section" id="o-nama">
-  <div class="container intro__grid">
-    <div class="intro__text">
-      <p class="eyebrow" data-reveal>Visit Ljubač</p>
-      <h2 class="h2" data-split>Otkrijte skriveni dragulj <em>Ljubača</em></h2>
-      <p class="lead" data-reveal>
-        Mjesto gdje se maslinik spušta do mora, a dan završava zalaskom sunca iznad zaljeva.
-        Ovdje se usporava, diše punim plućima i ponovno povezuje s prirodom.
-      </p>
-
-      <ul class="features">
-        <li data-reveal style="--i:0">
-          <span class="features__icon"><svg><use href="#i-tent"/></svg></span>
-          <div><h3>Uronite u prirodu</h3><p>Elegantne kućice na drvetu i glamping šatori usred maslinika i borove šume.</p></div>
-        </li>
-        <li data-reveal style="--i:1">
-          <span class="features__icon"><svg><use href="#i-wave"/></svg></span>
-          <div><h3>Korak do mora</h3><p>Samo nekoliko koraka od Jadranskog mora, uz spektakularan pogled na planine.</p></div>
-        </li>
-        <li data-reveal style="--i:2">
-          <span class="features__icon"><svg><use href="#i-compass"/></svg></span>
-          <div><h3>Avantura vas čeka</h3><p>Ekskluzivne aktivnosti u prirodi i kulturni izleti po sjevernoj Dalmaciji.</p></div>
-        </li>
-        <li data-reveal style="--i:3">
-          <span class="features__icon"><svg><use href="#i-heart"/></svg></span>
-          <div><h3>Uspomene za cijeli život</h3><p>Priče uz zalazak sunca i trenuci koji ostaju zauvijek.</p></div>
-        </li>
-      </ul>
-    </div>
-
-    <div class="intro__media">
-      <figure class="intro__img intro__img--a" data-reveal="clip">
-        <img src="img/uvod/sator-pogled.webp" srcset="img/uvod/sator-pogled-sm.webp 720w, img/uvod/sator-pogled.webp 1400w" sizes="(max-width: 900px) 70vw, 32vw" alt="Glamping šator s terasom i pogledom na zelenilo" loading="lazy" decoding="async" data-parallax="-0.06">
-      </figure>
-      <figure class="intro__img intro__img--b" data-reveal="clip">
-        <img src="img/uvod/plaza-cvijece.webp" srcset="img/uvod/plaza-cvijece-sm.webp 720w, img/uvod/plaza-cvijece.webp 1400w" sizes="(max-width: 900px) 55vw, 22vw" alt="Plaža uz kamp s rascvjetanom mimozom" loading="lazy" decoding="async" data-parallax="0.05">
-      </figure>
-      <figure class="intro__img intro__img--c" data-reveal="clip">
-        <img src="img/uvod/smokva-sm.webp" alt="Listovi smokve u kampu" loading="lazy" decoding="async" data-parallax="0.05">
-      </figure>
-      <div class="badge-spin" aria-hidden="true">
-        <svg class="badge-spin__ring" viewBox="0 0 200 200">
-          <defs><path id="circlePath" d="M100 100m-78 0a78 78 0 1 1 156 0a78 78 0 1 1-156 0"/></defs>
-          <text><textPath href="#circlePath">VISIT LJUBAČ • EXPLORE YOURSELF • VISIT LJUBAČ • EXPLORE YOURSELF • </textPath></text>
-        </svg>
-        <div class="badge-spin__core"><strong>50 m</strong><span>do mora</span></div>
-      </div>
-      <p class="intro__note" data-reveal>ljubav na prvi pogled ♡</p>
-    </div>
-  </div>
-
-  <div class="container">
-    <div class="stats" data-reveal>
-      <div class="stat">
-        <strong><span data-count="10">0</span>+</strong>
-        <span>godina iskustva</span>
-      </div>
-      <div class="stat">
-        <strong><span data-count="2500">0</span></strong>
-        <span>gostiju iz 40+ zemalja</span>
-      </div>
-      <div class="stat">
-        <strong><span data-count="98">0</span>%</strong>
-        <span>„Superb” ocjena na Booking.com</span>
-      </div>
-      <div class="stat">
-        <strong><span data-count="84">0</span>%</strong>
-        <span>„Excellent” ocjena na Googleu</span>
-      </div>
-    </div>
+<section class="band" data-header="dark" aria-hidden="true">
+  <div class="band__track">
+    <span>Ljubav na prvi pogled</span><svg><use href="#i-heart"/></svg><span>Glamping</span><svg><use href="#i-heart"/></svg><span>Kućice na drvetu</span><svg><use href="#i-heart"/></svg><span>50 m od mora</span><svg><use href="#i-heart"/></svg><span>Zalasci sunca</span><svg><use href="#i-heart"/></svg>
+    <span>Ljubav na prvi pogled</span><svg><use href="#i-heart"/></svg><span>Glamping</span><svg><use href="#i-heart"/></svg><span>Kućice na drvetu</span><svg><use href="#i-heart"/></svg><span>50 m od mora</span><svg><use href="#i-heart"/></svg><span>Zalasci sunca</span><svg><use href="#i-heart"/></svg>
   </div>
 </section>
 
-<!-- ============ PRIČA ============ -->
-<section class="story" id="prica">
-  <div class="story__bg">
-    <picture>
-      <source media="(max-aspect-ratio: 4/5)" srcset="img/hero/o-nama-m.webp">
-      <img src="img/hero/o-nama.webp" srcset="img/hero/o-nama-sm.webp 800w, img/hero/o-nama.webp 2000w" sizes="100vw" alt="Pogled iz zraka na kamp u masliniku" loading="lazy" decoding="async" data-parallax="0.12">
-    </picture>
+<!-- ============ O NAMA ============ -->
+<section class="about sec" id="o-nama">
+  <div class="wrap">
+    <div class="label" data-fade><span>(01)</span><span>O nama</span></div>
+    <p class="manifesto" data-words>Ljubač je skriveni dragulj sjeverne Dalmacije — maslinik koji se spušta do mora, borova šuma puna kućica na drvetu i zalasci sunca koji ostavljaju bez daha. Ovdje se usporava, diše punim plućima i <em>zaljubljuje na prvi pogled.</em></p>
+
+    <ul class="feats">
+      <li data-fade><span class="mono">01</span><h3>Uronite u prirodu</h3><p>Kućice na drvetu i glamping šatori usred maslinika i borove šume.</p></li>
+      <li data-fade><span class="mono">02</span><h3>Korak do mora</h3><p>Pješčana plaža Melin Školjić udaljena je samo 50&nbsp;metara.</p></li>
+      <li data-fade><span class="mono">03</span><h3>Avantura vas čeka</h3><p>Aktivnosti u prirodi i kulturni izleti po sjevernoj Dalmaciji.</p></li>
+      <li data-fade><span class="mono">04</span><h3>Ljubimci dobrodošli</h3><p>Ekološki kamp s plažom na kojoj se kupaju i male njuškice.</p></li>
+    </ul>
   </div>
-  <div class="container story__inner">
-    <div class="story__card" data-reveal>
-      <p class="eyebrow eyebrow--light">Naša priča</p>
-      <h2 class="h2 h2--light" data-split>Došli smo pobjeći od svakodnevice — <em>i ostali</em></h2>
-      <p>
-        Visit Ljubač nastao je tijekom pandemije kao projekt putničke agencije Ulix. Naš tim došao je u Ljubač
-        kako bi pobjegao od stresa svakodnevice i ponovno se povezao s prirodom. Što smo dulje boravili u ovom
-        bajkovitom selu, shvatili smo da je Ljubač puno više od mirnog skrovišta — savršeno je mjesto za prave ljubitelje prirode.
-      </p>
-      <p>
-        Tako je nastao kamp koji posjetiteljima omogućuje da potpuno urone u ljepotu sirove hrvatske prirode.
-        Osmišljen je da bude ekološki prihvatljiv, a u suradnji s lokalnim umjetnicima, glazbenicima i obrtnicima
-        gostima nudimo autentična iskustva — od glazbe uživo do lokalnih događanja.
-      </p>
-      <ul class="chips">
-        <li><svg><use href="#i-leaf"/></svg>Ekološki kamp</li>
-        <li><svg><use href="#i-paw"/></svg>Ljubimci dobrodošli</li>
-        <li><svg><use href="#i-heart"/></svg>Lokalna zajednica</li>
-      </ul>
+
+  <div class="wrap story">
+    <figure class="story__img" data-cursor="Ljubač">
+      <div class="story__frame bloom"><img src="img/hero/o-nama.webp" srcset="img/hero/o-nama-sm.webp 800w, img/hero/o-nama.webp 2000w" sizes="(max-width: 900px) 100vw, 55vw" alt="Pogled iz zraka na kamp u masliniku" loading="lazy" decoding="async"></div>
+      <figcaption class="mono">Kamp iz zraka · Ljubač</figcaption>
+    </figure>
+    <div class="story__text">
+      <div class="label" data-fade><span>(—)</span><span>Naša priča</span></div>
+      <h2 class="h2" data-lines>Došli smo pobjeći od svakodnevice. <em>I&nbsp;ostali.</em></h2>
+      <p data-fade>Visit Ljubač nastao je tijekom pandemije kao projekt putničke agencije Ulix. Naš tim došao je u Ljubač pobjeći od stresa svakodnevice i ponovno se povezati s prirodom — i shvatio da je ovo bajkovito selo puno više od mirnog skrovišta.</p>
+      <p data-fade>Tako je nastao ekološki prihvatljiv kamp u kojem gosti potpuno uranjaju u sirovu hrvatsku prirodu. S lokalnim umjetnicima, glazbenicima i obrtnicima nudimo autentična iskustva — od glazbe uživo do lokalnih događanja.</p>
+      <ul class="tags mono" data-fade><li>Ekološki kamp</li><li>Ljubimci dobrodošli</li><li>Lokalna zajednica</li></ul>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="stats">
+      <div class="stat" data-fade><strong><span data-count="10">10</span><span class="suffix">+</span></strong><span class="mono">Godina iskustva</span></div>
+      <div class="stat" data-fade><strong><span data-count="2500">2.500</span></strong><span class="mono">Gostiju iz 40+ zemalja</span></div>
+      <div class="stat" data-fade><strong><span data-count="98">98</span><span class="suffix">%</span></strong><span class="mono">„Superb” · Booking.com</span></div>
+      <div class="stat" data-fade><strong><span data-count="84">84</span><span class="suffix">%</span></strong><span class="mono">„Excellent” · Google</span></div>
     </div>
   </div>
 </section>
 
 <!-- ============ SMJEŠTAJ ============ -->
-<section class="stays section" id="smjestaj">
-  <div class="container">
-    <div class="section-head">
-      <p class="eyebrow" data-reveal>Naš izbor</p>
-      <h2 class="h2" data-split>Spavajte među <em>krošnjama</em>, uz šum mora</h2>
-      <p class="lead" data-reveal>Tri načina da doživite Ljubač — svaki s vlastitim pogledom, mirisom borova i mora te zvjezdanim nebom iznad glave.</p>
+<section class="stays sec" id="smjestaj">
+  <div class="wrap">
+    <div class="head">
+      <div class="label" data-fade><span>(02)</span><span>Smještaj</span></div>
+      <h2 class="h2 h2--xl" data-lines>Tri načina da se <em>zaljubite</em></h2>
+      <p class="lead" data-fade>Bell šatori u masliniku, kućice među krošnjama ili vaš šator uz more — svaki s vlastitim pogledom i zvjezdanim nebom iznad glave.</p>
     </div>
 
-    <!-- Bell Tent -->
-    <article class="stay" id="stay-bell" data-reveal>
-      <div class="stay__media">
-        <div class="slider" data-slider data-gallery="Glamping Bell Tent West">
-          <div class="slider__track">
-            <figure><img src="img/smjestaj/bell-1.webp" srcset="img/smjestaj/bell-1-sm.webp 720w, img/smjestaj/bell-1.webp 1400w" sizes="(max-width: 900px) 100vw, 58vw" alt="Bell šator s terasom" decoding="async"></figure>
-            <figure><img src="img/smjestaj/bell-2-sm.webp" data-full="img/smjestaj/bell-2.webp" alt="Bell šator s pogledom na more" loading="lazy" decoding="async"></figure>
-            <figure><img src="img/smjestaj/bell-3-sm.webp" data-full="img/smjestaj/bell-3.webp" alt="Pogled iz šatora na terasu" loading="lazy" decoding="async"></figure>
-            <figure><img src="img/smjestaj/bell-4-sm.webp" data-full="img/smjestaj/bell-4.webp" alt="Unutrašnjost šatora s krevetima" loading="lazy" decoding="async"></figure>
-            <figure><img src="img/smjestaj/bell-5-sm.webp" data-full="img/smjestaj/bell-5.webp" alt="Bell šator u zelenilu uz more" loading="lazy" decoding="async"></figure>
-            <figure><img src="img/smjestaj/bell-6-sm.webp" data-full="img/smjestaj/bell-6.webp" alt="Natkrivena vanjska kuhinja s pogledom" loading="lazy" decoding="async"></figure>
-            <figure><img src="img/smjestaj/bell-7-sm.webp" data-full="img/smjestaj/bell-7.webp" alt="Viseća mreža ispred šatora" loading="lazy" decoding="async"></figure>
-            <figure><img src="img/smjestaj/bell-8-sm.webp" data-full="img/smjestaj/bell-8.webp" alt="Zalazak sunca iz kampa" loading="lazy" decoding="async"></figure>
+    <div class="stack" id="stack">
+      <!-- Bell tent -->
+      <article class="card card--dark" id="stay-bell">
+        <div class="card__media">
+          <div class="slider" data-slider data-gallery="Glamping Bell Tent West" data-cursor="Povuci">
+            <div class="slider__track">
+              <figure><img src="img/smjestaj/bell-1.webp" srcset="img/smjestaj/bell-1-sm.webp 720w, img/smjestaj/bell-1.webp 1400w" sizes="(max-width: 900px) 100vw, 55vw" alt="Bell šator s terasom" loading="lazy" decoding="async"></figure>
+              <figure><img src="img/smjestaj/bell-2-sm.webp" data-full="img/smjestaj/bell-2.webp" alt="Bell šator s pogledom na more" loading="lazy" decoding="async"></figure>
+              <figure><img src="img/smjestaj/bell-3-sm.webp" data-full="img/smjestaj/bell-3.webp" alt="Pogled iz šatora na terasu" loading="lazy" decoding="async"></figure>
+              <figure><img src="img/smjestaj/bell-4-sm.webp" data-full="img/smjestaj/bell-4.webp" alt="Unutrašnjost šatora s krevetima" loading="lazy" decoding="async"></figure>
+              <figure><img src="img/smjestaj/bell-5-sm.webp" data-full="img/smjestaj/bell-5.webp" alt="Bell šator u zelenilu uz more" loading="lazy" decoding="async"></figure>
+              <figure><img src="img/smjestaj/bell-6-sm.webp" data-full="img/smjestaj/bell-6.webp" alt="Natkrivena vanjska kuhinja s pogledom" loading="lazy" decoding="async"></figure>
+              <figure><img src="img/smjestaj/bell-7-sm.webp" data-full="img/smjestaj/bell-7.webp" alt="Viseća mreža ispred šatora" loading="lazy" decoding="async"></figure>
+              <figure><img src="img/smjestaj/bell-8-sm.webp" data-full="img/smjestaj/bell-8.webp" alt="Zalazak sunca iz kampa" loading="lazy" decoding="async"></figure>
+            </div>
+            <div class="slider__ui">
+              <span class="slider__count mono">01 / 08</span>
+              <div class="slider__btns">
+                <button class="slider__btn" data-dir="-1" aria-label="Prethodna fotografija"><svg class="i"><use href="#i-arrow-l"/></svg></button>
+                <button class="slider__btn" data-dir="1" aria-label="Sljedeća fotografija"><svg class="i"><use href="#i-arrow"/></svg></button>
+              </div>
+            </div>
+            <div class="slider__bar"><i></i></div>
           </div>
-          <button class="slider__btn slider__btn--prev" aria-label="Prethodna fotografija"><svg><use href="#i-arrow-l"/></svg></button>
-          <button class="slider__btn slider__btn--next" aria-label="Sljedeća fotografija"><svg><use href="#i-arrow-r"/></svg></button>
-          <div class="slider__meta"><span class="slider__count">1 / 8</span><button class="slider__zoom" type="button"><svg><use href="#i-grid"/></svg>Galerija</button></div>
-          <div class="slider__dots"></div>
         </div>
-      </div>
-      <div class="stay__body">
-        <p class="stay__kicker"><span>01</span> Glamping u masliniku</p>
-        <h3 class="stay__title">Glamping Bell Tent West</h3>
-        <p class="stay__desc">
-          Prostrani bell šatori smješteni u masliniku i prirodi, svega 50&nbsp;m od mora. Opremljeni su krevetima
-          i posteljinom, a svaki ima terasu i vanjsku kuhinju. Wi-Fi je dostupan u cijelom kampu.
-        </p>
-        <ul class="facts">
-          <li><svg><use href="#i-users"/></svg><strong>do 4</strong> gosta</li>
-          <li><svg><use href="#i-ruler"/></svg><strong>28 m²</strong> šator</li>
-          <li><svg><use href="#i-beach"/></svg><strong>50 m</strong> do plaže</li>
-        </ul>
-        <div class="variants">
-          <div><strong>S privatnom kupaonicom</strong><span>Kupaonica s toaletom i tušem uz šator</span></div>
-          <div><strong>Sa zajedničkom kupaonicom</strong><span>Zajednička vanjska kuhinja i kupaonica u blizini</span></div>
-        </div>
-        <ul class="amen">
-          <li><svg><use href="#i-wifi"/></svg>WiFi</li>
-          <li><svg><use href="#i-parking"/></svg>Parking</li>
-          <li><svg><use href="#i-sun"/></svg>Terasa</li>
-          <li><svg><use href="#i-kitchen"/></svg>Vanjska kuhinja</li>
-          <li><svg><use href="#i-flame"/></svg>BBQ oprema</li>
-          <li><svg><use href="#i-fridge"/></svg>Hladnjak</li>
-        </ul>
-        <p class="stay__note"><svg><use href="#i-pin"/></svg>Put do kampa je makadam — preporučujemo dolazak višim automobilom.</p>
-        <div class="stay__ctas">
-          <button class="btn btn--dark" data-book="bell" data-magnetic>Rezerviraj šator <svg><use href="#i-arrow-r"/></svg></button>
-          <button class="btn btn--line" data-open-gallery>Pogledaj galeriju</button>
-        </div>
-      </div>
-    </article>
-
-    <!-- Treehouses -->
-    <article class="stay stay--flip" id="stay-tree" data-reveal>
-      <div class="stay__media">
-        <div class="slider" data-slider data-gallery="TreeHouses Ljubač">
-          <div class="slider__track">
-            <figure><img src="img/smjestaj/tree-1.webp" srcset="img/smjestaj/tree-1-sm.webp 720w, img/smjestaj/tree-1.webp 1400w" sizes="(max-width: 900px) 100vw, 58vw" alt="Kućica na drvetu s mrežom za sjenu" loading="lazy" decoding="async"></figure>
-            <figure><img src="img/smjestaj/tree-2-sm.webp" data-full="img/smjestaj/tree-2.webp" alt="Kućica na drvetu u borovoj šumi" loading="lazy" decoding="async"></figure>
-            <figure><img src="img/smjestaj/tree-3-sm.webp" data-full="img/smjestaj/tree-3.webp" alt="Terasa i vanjska kuhinja kućice" loading="lazy" decoding="async"></figure>
-            <figure><img src="img/smjestaj/tree-4-sm.webp" data-full="img/smjestaj/tree-4.webp" alt="Spavaća soba u kućici na drvetu" loading="lazy" decoding="async"></figure>
-            <figure><img src="img/smjestaj/tree-5-sm.webp" data-full="img/smjestaj/tree-5.webp" alt="Pogled kroz borove na zaljev" loading="lazy" decoding="async"></figure>
-            <figure><img src="img/smjestaj/tree-6-sm.webp" data-full="img/smjestaj/tree-6.webp" alt="Soba s krevetom na kat" loading="lazy" decoding="async"></figure>
-            <figure><img src="img/smjestaj/tree-7-sm.webp" data-full="img/smjestaj/tree-7.webp" alt="Kupaonica s tušem" loading="lazy" decoding="async"></figure>
-            <figure><img src="img/smjestaj/tree-8-sm.webp" data-full="img/smjestaj/tree-8.webp" alt="Kućica na drvetu među stablima" loading="lazy" decoding="async"></figure>
+        <div class="card__body">
+          <div class="card__top mono"><span>01 / 03</span><span>Glamping u masliniku</span></div>
+          <h3 class="card__title">Bell Tent West</h3>
+          <p class="card__desc">Prostrani bell šatori u masliniku, svega 50&nbsp;m od mora — s krevetima i posteljinom, terasom i vanjskom kuhinjom. Birajte šator s privatnom ili zajedničkom kupaonicom.</p>
+          <ul class="facts">
+            <li><strong>4</strong><span class="mono">gosta</span></li>
+            <li><strong>28 m²</strong><span class="mono">šator</span></li>
+            <li><strong>50 m</strong><span class="mono">do plaže</span></li>
+          </ul>
+          <ul class="amen mono"><li>WiFi</li><li>Parking</li><li>Terasa</li><li>Vanjska kuhinja</li><li>BBQ</li><li>Hladnjak</li></ul>
+          <div class="card__ctas">
+            <button class="btn btn--red" data-book="bell" data-roll data-burst>Rezerviraj šator</button>
+            <button class="btn btn--line" data-open-gallery data-roll>Galerija</button>
           </div>
-          <button class="slider__btn slider__btn--prev" aria-label="Prethodna fotografija"><svg><use href="#i-arrow-l"/></svg></button>
-          <button class="slider__btn slider__btn--next" aria-label="Sljedeća fotografija"><svg><use href="#i-arrow-r"/></svg></button>
-          <div class="slider__meta"><span class="slider__count">1 / 8</span><button class="slider__zoom" type="button"><svg><use href="#i-grid"/></svg>Galerija</button></div>
-          <div class="slider__dots"></div>
         </div>
-      </div>
-      <div class="stay__body">
-        <p class="stay__kicker"><span>02</span> Među krošnjama</p>
-        <h3 class="stay__title">Kućice na drvetu</h3>
-        <p class="stay__desc">
-          Kućice na drvetu skrivene u borovoj šumi, izgrađene s ljubavlju za one koji žele pobjeći od masovnog turizma.
-          Svaka ima dvije sobe, kupaonicu s toaletom i tuš kabinom, vanjsku kuhinju i terasu među krošnjama.
-          Do kućica se stiže prirodnim stepenicama u zemlji.
-        </p>
-        <ul class="facts">
-          <li><svg><use href="#i-users"/></svg><strong>4–5</strong> gostiju</li>
-          <li><svg><use href="#i-bed"/></svg><strong>2</strong> sobe</li>
-          <li><svg><use href="#i-beach"/></svg><strong>1 km</strong> do plaže</li>
-        </ul>
-        <div class="variants">
-          <div><strong>Kućica za 4 osobe</strong><span>Dvije sobe, 30 m² · dostupna i verzija na dva kata</span></div>
-          <div><strong>Kućica za 5 osoba</strong><span>Dvije sobe, 30 m² · idealno za obitelji</span></div>
-        </div>
-        <ul class="amen">
-          <li><svg><use href="#i-shower"/></svg>Kupaonica</li>
-          <li><svg><use href="#i-kitchen"/></svg>Vanjska kuhinja</li>
-          <li><svg><use href="#i-sun"/></svg>Terasa</li>
-          <li><svg><use href="#i-wifi"/></svg>WiFi</li>
-          <li><svg><use href="#i-bike"/></svg>Biciklizam</li>
-          <li><svg><use href="#i-flame"/></svg>BBQ oprema</li>
-        </ul>
-        <p class="stay__note"><svg><use href="#i-child"/></svg>Dječje igralište udaljeno je oko 1 km od kućica.</p>
-        <div class="stay__ctas">
-          <button class="btn btn--dark" data-book="tree" data-magnetic>Rezerviraj kućicu <svg><use href="#i-arrow-r"/></svg></button>
-          <button class="btn btn--line" data-open-gallery>Pogledaj galeriju</button>
-        </div>
-      </div>
-    </article>
+      </article>
 
-    <!-- Tent pitch -->
-    <article class="stay" id="stay-pitch" data-reveal>
-      <div class="stay__media">
-        <div class="slider" data-slider data-gallery="Parcela za šator">
-          <div class="slider__track">
-            <figure><img src="img/smjestaj/pitch-1.webp" srcset="img/smjestaj/pitch-1-sm.webp 720w, img/smjestaj/pitch-1.webp 1400w" sizes="(max-width: 900px) 100vw, 58vw" alt="Maslinik s pogledom na more u zalasku" loading="lazy" decoding="async"></figure>
-            <figure><img src="img/smjestaj/pitch-2-sm.webp" data-full="img/smjestaj/pitch-2.webp" alt="Šator na livadi uz more" loading="lazy" decoding="async"></figure>
-            <figure><img src="img/smjestaj/pitch-3-sm.webp" data-full="img/smjestaj/pitch-3.webp" alt="Ognjište na parceli s pogledom na more" loading="lazy" decoding="async"></figure>
-            <figure><img src="img/smjestaj/pitch-4-sm.webp" data-full="img/smjestaj/pitch-4.webp" alt="Parcela među maslinama" loading="lazy" decoding="async"></figure>
-            <figure><img src="img/smjestaj/pitch-5-sm.webp" data-full="img/smjestaj/pitch-5.webp" alt="Prostrane parcele uz more" loading="lazy" decoding="async"></figure>
-            <figure><img src="img/smjestaj/pitch-6-sm.webp" data-full="img/smjestaj/pitch-6.webp" alt="Kamp iz zraka" loading="lazy" decoding="async"></figure>
+      <!-- Treehouses -->
+      <article class="card card--light" id="stay-tree">
+        <div class="card__media">
+          <div class="slider" data-slider data-gallery="Kućice na drvetu" data-cursor="Povuci">
+            <div class="slider__track">
+              <figure><img src="img/smjestaj/tree-1.webp" srcset="img/smjestaj/tree-1-sm.webp 720w, img/smjestaj/tree-1.webp 1400w" sizes="(max-width: 900px) 100vw, 55vw" alt="Kućica na drvetu s mrežom za sjenu" loading="lazy" decoding="async"></figure>
+              <figure><img src="img/smjestaj/tree-2-sm.webp" data-full="img/smjestaj/tree-2.webp" alt="Kućica na drvetu u borovoj šumi" loading="lazy" decoding="async"></figure>
+              <figure><img src="img/smjestaj/tree-3-sm.webp" data-full="img/smjestaj/tree-3.webp" alt="Terasa i vanjska kuhinja kućice" loading="lazy" decoding="async"></figure>
+              <figure><img src="img/smjestaj/tree-4-sm.webp" data-full="img/smjestaj/tree-4.webp" alt="Spavaća soba u kućici na drvetu" loading="lazy" decoding="async"></figure>
+              <figure><img src="img/smjestaj/tree-5-sm.webp" data-full="img/smjestaj/tree-5.webp" alt="Pogled kroz borove na zaljev" loading="lazy" decoding="async"></figure>
+              <figure><img src="img/smjestaj/tree-6-sm.webp" data-full="img/smjestaj/tree-6.webp" alt="Soba s krevetom na kat" loading="lazy" decoding="async"></figure>
+              <figure><img src="img/smjestaj/tree-7-sm.webp" data-full="img/smjestaj/tree-7.webp" alt="Kupaonica s tušem" loading="lazy" decoding="async"></figure>
+              <figure><img src="img/smjestaj/tree-8-sm.webp" data-full="img/smjestaj/tree-8.webp" alt="Kućica na drvetu među stablima" loading="lazy" decoding="async"></figure>
+            </div>
+            <div class="slider__ui">
+              <span class="slider__count mono">01 / 08</span>
+              <div class="slider__btns">
+                <button class="slider__btn" data-dir="-1" aria-label="Prethodna fotografija"><svg class="i"><use href="#i-arrow-l"/></svg></button>
+                <button class="slider__btn" data-dir="1" aria-label="Sljedeća fotografija"><svg class="i"><use href="#i-arrow"/></svg></button>
+              </div>
+            </div>
+            <div class="slider__bar"><i></i></div>
           </div>
-          <button class="slider__btn slider__btn--prev" aria-label="Prethodna fotografija"><svg><use href="#i-arrow-l"/></svg></button>
-          <button class="slider__btn slider__btn--next" aria-label="Sljedeća fotografija"><svg><use href="#i-arrow-r"/></svg></button>
-          <div class="slider__meta"><span class="slider__count">1 / 6</span><button class="slider__zoom" type="button"><svg><use href="#i-grid"/></svg>Galerija</button></div>
-          <div class="slider__dots"></div>
         </div>
-      </div>
-      <div class="stay__body">
-        <p class="stay__kicker"><span>03</span> Kampiranje s pogledom</p>
-        <h3 class="stay__title">Parcela za šator</h3>
-        <p class="stay__desc">
-          Donesite svoj šator i uživajte u privatnosti uz pogled na more. U kampu imate pristup zajedničkoj kuhinji
-          i zajedničkoj kupaonici, a Wi-Fi je besplatan. Jednostavno, mirno i blizu prirode.
-        </p>
-        <ul class="facts">
-          <li><svg><use href="#i-users"/></svg><strong>do 3</strong> osobe</li>
-          <li><svg><use href="#i-tent"/></svg><strong>6</strong> parcela</li>
-          <li><svg><use href="#i-beach"/></svg><strong>50 m</strong> do plaže</li>
-        </ul>
-        <ul class="amen">
-          <li><svg><use href="#i-kitchen"/></svg>Zajednička kuhinja</li>
-          <li><svg><use href="#i-shower"/></svg>Zajednička kupaonica</li>
-          <li><svg><use href="#i-wifi"/></svg>Besplatan WiFi</li>
-          <li><svg><use href="#i-parking"/></svg>Parking</li>
-        </ul>
-        <div class="stay__ctas">
-          <button class="btn btn--dark" data-book="pitch" data-magnetic>Rezerviraj parcelu <svg><use href="#i-arrow-r"/></svg></button>
-          <button class="btn btn--line" data-open-gallery>Pogledaj galeriju</button>
+        <div class="card__body">
+          <div class="card__top mono"><span>02 / 03</span><span>Među krošnjama</span></div>
+          <h3 class="card__title">Kućice na drvetu</h3>
+          <p class="card__desc">Skrivene u borovoj šumi i izgrađene s ljubavlju: dvije sobe, kupaonica s tušem, vanjska kuhinja i terasa među krošnjama. Za one koji žele pobjeći od masovnog turizma.</p>
+          <ul class="facts">
+            <li><strong>4–5</strong><span class="mono">gostiju</span></li>
+            <li><strong>2</strong><span class="mono">sobe</span></li>
+            <li><strong>1 km</strong><span class="mono">do plaže</span></li>
+          </ul>
+          <ul class="amen mono"><li>Kupaonica</li><li>Vanjska kuhinja</li><li>Terasa</li><li>WiFi</li><li>Bicikli</li><li>BBQ</li></ul>
+          <div class="card__ctas">
+            <button class="btn btn--red" data-book="tree" data-roll data-burst>Rezerviraj kućicu</button>
+            <button class="btn btn--line" data-open-gallery data-roll>Galerija</button>
+          </div>
         </div>
-      </div>
-    </article>
+      </article>
 
-    <div class="perks" data-reveal>
-      <div><svg><use href="#i-tag"/></svg><p><strong>Najbolja cijena</strong> uz izravnu rezervaciju</p></div>
-      <div><svg><use href="#i-shield"/></svg><p><strong>Sigurno plaćanje</strong> PCI-DSS certificirano</p></div>
-      <div><svg><use href="#i-paw"/></svg><p><strong>Ljubimci dobrodošli</strong> uz plažu za njuškice</p></div>
-      <div><svg><use href="#i-check"/></svg><p><strong>PDV (13%)</strong> uključen u cijenu</p></div>
+      <!-- Tent pitch -->
+      <article class="card card--dark" id="stay-pitch">
+        <div class="card__media">
+          <div class="slider" data-slider data-gallery="Parcela za šator" data-cursor="Povuci">
+            <div class="slider__track">
+              <figure><img src="img/smjestaj/pitch-1.webp" srcset="img/smjestaj/pitch-1-sm.webp 720w, img/smjestaj/pitch-1.webp 1400w" sizes="(max-width: 900px) 100vw, 55vw" alt="Maslinik s pogledom na more u zalasku" loading="lazy" decoding="async"></figure>
+              <figure><img src="img/smjestaj/pitch-2-sm.webp" data-full="img/smjestaj/pitch-2.webp" alt="Šator na livadi uz more" loading="lazy" decoding="async"></figure>
+              <figure><img src="img/smjestaj/pitch-3-sm.webp" data-full="img/smjestaj/pitch-3.webp" alt="Ognjište na parceli s pogledom na more" loading="lazy" decoding="async"></figure>
+              <figure><img src="img/smjestaj/pitch-4-sm.webp" data-full="img/smjestaj/pitch-4.webp" alt="Parcela među maslinama" loading="lazy" decoding="async"></figure>
+              <figure><img src="img/smjestaj/pitch-5-sm.webp" data-full="img/smjestaj/pitch-5.webp" alt="Prostrane parcele uz more" loading="lazy" decoding="async"></figure>
+              <figure><img src="img/smjestaj/pitch-6-sm.webp" data-full="img/smjestaj/pitch-6.webp" alt="Kamp iz zraka" loading="lazy" decoding="async"></figure>
+            </div>
+            <div class="slider__ui">
+              <span class="slider__count mono">01 / 06</span>
+              <div class="slider__btns">
+                <button class="slider__btn" data-dir="-1" aria-label="Prethodna fotografija"><svg class="i"><use href="#i-arrow-l"/></svg></button>
+                <button class="slider__btn" data-dir="1" aria-label="Sljedeća fotografija"><svg class="i"><use href="#i-arrow"/></svg></button>
+              </div>
+            </div>
+            <div class="slider__bar"><i></i></div>
+          </div>
+        </div>
+        <div class="card__body">
+          <div class="card__top mono"><span>03 / 03</span><span>Kampiranje s pogledom</span></div>
+          <h3 class="card__title">Parcela za šator</h3>
+          <p class="card__desc">Donesite svoj šator i uživajte u privatnosti uz pogled na more. Na raspolaganju su vam zajednička kuhinja i kupaonica, a Wi-Fi je besplatan.</p>
+          <ul class="facts">
+            <li><strong>3</strong><span class="mono">osobe</span></li>
+            <li><strong>6</strong><span class="mono">parcela</span></li>
+            <li><strong>50 m</strong><span class="mono">do plaže</span></li>
+          </ul>
+          <ul class="amen mono"><li>Zajednička kuhinja</li><li>Kupaonica</li><li>WiFi</li><li>Parking</li></ul>
+          <div class="card__ctas">
+            <button class="btn btn--red" data-book="pitch" data-roll data-burst>Rezerviraj parcelu</button>
+            <button class="btn btn--line" data-open-gallery data-roll>Galerija</button>
+          </div>
+        </div>
+      </article>
     </div>
+
+    <ul class="perks mono">
+      <li data-fade>Najbolja cijena uz izravnu rezervaciju</li>
+      <li data-fade>Sigurno plaćanje · PCI-DSS</li>
+      <li data-fade>PDV (13%) uključen u cijenu</li>
+      <li data-fade>Put do kampa je makadam — preporučujemo viši automobil</li>
+    </ul>
   </div>
 </section>
 
-<!-- ============ FOTO TRAKA ============ -->
-<div class="strip" aria-hidden="true">
-  <div class="strip__track">
-    <img src="img/uvod/ljuljacka-sm.webp" alt="" loading="lazy">
-    <img src="img/uvod/skoljke-sm.webp" alt="" loading="lazy">
-    <img src="img/smjestaj/tree-5-sm.webp" alt="" loading="lazy">
-    <img src="img/uvod/sesir-sm.webp" alt="" loading="lazy">
-    <img src="img/dozivljaji/stol-sm.webp" alt="" loading="lazy">
-    <img src="img/hero/noc-sator-sm.webp" alt="" loading="lazy">
-    <img src="img/uvod/maslinik-sm.webp" alt="" loading="lazy">
-    <img src="img/dozivljaji/sauna-pogled-sm.webp" alt="" loading="lazy">
-    <img src="img/smjestaj/bell-8-sm.webp" alt="" loading="lazy">
-    <img src="img/uvod/ljuljacka-sm.webp" alt="" loading="lazy">
-    <img src="img/uvod/skoljke-sm.webp" alt="" loading="lazy">
-    <img src="img/smjestaj/tree-5-sm.webp" alt="" loading="lazy">
-    <img src="img/uvod/sesir-sm.webp" alt="" loading="lazy">
-    <img src="img/dozivljaji/stol-sm.webp" alt="" loading="lazy">
-    <img src="img/hero/noc-sator-sm.webp" alt="" loading="lazy">
-    <img src="img/uvod/maslinik-sm.webp" alt="" loading="lazy">
-    <img src="img/dozivljaji/sauna-pogled-sm.webp" alt="" loading="lazy">
-    <img src="img/smjestaj/bell-8-sm.webp" alt="" loading="lazy">
+<!-- ============ DOŽIVLJAJI (horizontalno) ============ -->
+<section class="exp" id="dozivljaji" data-header="dark">
+  <div class="exp__sticky">
+    <div class="exp__track">
+      <div class="exp__intro">
+        <div class="label label--light"><span>(03)</span><span>Doživljaji</span></div>
+        <h2 class="h2 h2--xl h2--light">Više od <em>odmora</em></h2>
+        <p class="lead lead--light">Izleti brodom, slikarske radionice, jahanje magaraca pa čak i mala škola arheologije. Birajte svoj ritam — mi se brinemo za ostalo.</p>
+        <p class="exp__hint mono">Skrolajte <svg class="i"><use href="#i-arrow"/></svg></p>
+      </div>
+      <article class="act"><figure class="act__img bloom"><img src="img/dozivljaji/stol-sm.webp" alt="Stol na terasi za večeru" loading="lazy" decoding="async"></figure><span class="mono">01</span><h3>Paint, wine &amp; dinner</h3><p>Opuštanje uz slikanje, čašu lokalnog vina i večeru.</p></article>
+      <article class="act"><figure class="act__img bloom"><img src="img/dozivljaji/maslina-sunce-sm.webp" alt="Maslinik obasjan suncem" loading="lazy" decoding="async"></figure><span class="mono">02</span><h3>Igre u masliniku</h3><p>Istražite selo puno maslina.</p></article>
+      <article class="act"><figure class="act__img bloom"><img src="img/dozivljaji/sauna-pogled-sm.webp" alt="Mobilna sauna s pogledom na more" loading="lazy" decoding="async"></figure><span class="mono">03</span><h3>Sauna na moru</h3><p>Sauna s pogledom na more ili mobilna sauna.</p></article>
+      <article class="act"><figure class="act__img bloom"><img src="img/uvod/smokva-sm.webp" alt="Listovi smokve" loading="lazy" decoding="async"></figure><span class="mono">04</span><h3>Vrtlarstvo</h3><p>Iskusite dan u životu lokalnih ljudi.</p></article>
+      <article class="act"><figure class="act__img bloom"><img src="img/mjesta/put-rtina-sm.webp" alt="Makadamski put kroz prirodu" loading="lazy" decoding="async"></figure><span class="mono">05</span><h3>Biciklizam</h3><p>Istražite prirodu vozeći bicikl kroz šumu.</p></article>
+      <article class="act"><figure class="act__img bloom"><img src="img/dozivljaji/igraliste-sm.webp" alt="Dječje igralište" loading="lazy" decoding="async"></figure><span class="mono">06</span><h3>Čuvanje djece</h3><p>Vrijeme za vas dok djeca uživaju u atletici i kiparstvu.</p></article>
+      <article class="act"><figure class="act__img bloom"><img src="img/dozivljaji/kuhinja-sm.webp" alt="Vanjska kuhinja" loading="lazy" decoding="async"></figure><span class="mono">07</span><h3>Opskrba namirnicama</h3><p>Ne gubite vrijeme na kupovinu — tu smo za vas.</p></article>
+      <article class="act"><figure class="act__img bloom"><img src="img/dozivljaji/transfer-sm.webp" alt="Kombi za transfer" loading="lazy" decoding="async"></figure><span class="mono">08</span><h3>Transfer</h3><p>Siguran prijevoz do trgovine, restorana ili kamo želite.</p></article>
+      <article class="act"><figure class="act__img bloom"><img src="img/dozivljaji/opustanje-sm.webp" alt="Opuštanje na terasi" loading="lazy" decoding="async"></figure><span class="mono">09</span><h3>Sat joge</h3><p>Unutarnji mir, snaga i ravnoteža za tijelo, um i duh.</p></article>
+      <article class="act act--red">
+        <svg class="act__heart" aria-hidden="true"><use href="#i-heart"/></svg>
+        <h3>…i još puno toga</h3>
+        <ul class="mono"><li>Izleti brodom</li><li>Jahanje magaraca</li><li>Mala škola arheologije</li><li>Glazba uživo</li><li>Lokalna događanja</li></ul>
+      </article>
+    </div>
+    <div class="exp__progress" aria-hidden="true"><i></i></div>
   </div>
-</div>
+</section>
 
-<!-- ============ DOŽIVLJAJI ============ -->
-<section class="exp section section--dark" id="dozivljaji">
-  <div class="exp__glow" aria-hidden="true"></div>
-  <div class="container">
-    <div class="section-head section-head--split">
+<!-- ============ CJENIK ============ -->
+<section class="prices sec" id="cjenik">
+  <div class="wrap">
+    <div class="head head--split">
       <div>
-        <p class="eyebrow eyebrow--light" data-reveal>Aktivnosti i doživljaji</p>
-        <h2 class="h2 h2--light" data-split>Više od odmora — <em>doživljaj</em></h2>
+        <div class="label" data-fade><span>(04)</span><span>Usluge i cjenik</span></div>
+        <h2 class="h2 h2--xl" data-lines>Dodajte malo <em>avanture</em></h2>
       </div>
-      <p class="lead lead--light" data-reveal>
-        Izleti brodom, slikarske radionice, jahanje magaraca pa čak i mala škola arheologije.
-        Birajte svoj ritam — mi se brinemo za ostalo.
-      </p>
+      <p class="lead" data-fade>Rezervirajte uz smještaj ili na licu mjesta — naš tim na terenu uvijek je tu za vas.</p>
     </div>
-
-    <ol class="acts">
-      <li data-img="img/dozivljaji/stol-sm.webp" data-reveal style="--i:0"><span class="acts__n">01</span><span class="acts__icon"><svg><use href="#i-paint"/></svg></span><div><h3>Paint, wine &amp; dinner</h3><p>Opuštanje uz slikanje i čašu lokalnog vina</p></div><svg class="acts__arrow"><use href="#i-arrow-r"/></svg></li>
-      <li data-img="img/dozivljaji/maslina-sunce-sm.webp" data-reveal style="--i:1"><span class="acts__n">02</span><span class="acts__icon"><svg><use href="#i-olive"/></svg></span><div><h3>Igre u masliniku</h3><p>Istražite selo puno maslina</p></div><svg class="acts__arrow"><use href="#i-arrow-r"/></svg></li>
-      <li data-img="img/dozivljaji/sauna-pogled-sm.webp" data-reveal style="--i:2"><span class="acts__n">03</span><span class="acts__icon"><svg><use href="#i-steam"/></svg></span><div><h3>Sauna na moru</h3><p>Sauna s pogledom na more ili mobilna sauna</p></div><svg class="acts__arrow"><use href="#i-arrow-r"/></svg></li>
-      <li data-img="img/uvod/smokva-sm.webp" data-reveal style="--i:3"><span class="acts__n">04</span><span class="acts__icon"><svg><use href="#i-sprout"/></svg></span><div><h3>Vrtlarstvo</h3><p>Iskusite dan u životu lokalnih ljudi</p></div><svg class="acts__arrow"><use href="#i-arrow-r"/></svg></li>
-      <li data-img="img/mjesta/put-rtina-sm.webp" data-reveal style="--i:4"><span class="acts__n">05</span><span class="acts__icon"><svg><use href="#i-bike"/></svg></span><div><h3>Biciklizam</h3><p>Istražite prirodu vozeći bicikl kroz šumu</p></div><svg class="acts__arrow"><use href="#i-arrow-r"/></svg></li>
-      <li data-img="img/dozivljaji/igraliste-sm.webp" data-reveal style="--i:5"><span class="acts__n">06</span><span class="acts__icon"><svg><use href="#i-child"/></svg></span><div><h3>Čuvanje djece</h3><p>Vrijeme za vas dok djeca uživaju u atletici i kiparstvu</p></div><svg class="acts__arrow"><use href="#i-arrow-r"/></svg></li>
-      <li data-img="img/dozivljaji/kuhinja-sm.webp" data-reveal style="--i:6"><span class="acts__n">07</span><span class="acts__icon"><svg><use href="#i-basket"/></svg></span><div><h3>Opskrba namirnicama</h3><p>Ne gubite vrijeme na kupovinu — tu smo za vas</p></div><svg class="acts__arrow"><use href="#i-arrow-r"/></svg></li>
-      <li data-img="img/dozivljaji/transfer-sm.webp" data-reveal style="--i:7"><span class="acts__n">08</span><span class="acts__icon"><svg><use href="#i-van"/></svg></span><div><h3>Transfer</h3><p>Siguran prijevoz do trgovine, restorana ili kamo želite</p></div><svg class="acts__arrow"><use href="#i-arrow-r"/></svg></li>
-      <li data-img="img/dozivljaji/opustanje-sm.webp" data-reveal style="--i:8"><span class="acts__n">09</span><span class="acts__icon"><svg><use href="#i-lotus"/></svg></span><div><h3>Sat joge</h3><p>Unutarnji mir, snaga i ravnoteža za tijelo, um i duh</p></div><svg class="acts__arrow"><use href="#i-arrow-r"/></svg></li>
-    </ol>
-    <figure class="acts__float" aria-hidden="true"><img alt=""></figure>
-
-    <div class="services">
-      <div class="services__head">
-        <h3 class="h3 h3--light" data-reveal>Usluge i cjenik</h3>
-        <p data-reveal>Rezervirajte uz smještaj ili na licu mjesta.</p>
-      </div>
-      <div class="services__grid">
-        <article class="svc" data-reveal style="--i:0">
-          <div class="svc__img"><img src="img/dozivljaji/sauna-sm.webp" alt="Unutrašnjost mobilne saune" loading="lazy" decoding="async"></div>
-          <div class="svc__body">
-            <h4>Najam mobilne saune</h4>
-            <p>Privatna sauna na željenoj lokaciji u kampu — za opuštanje i regeneraciju uz pogled na more.</p>
-            <ul class="price">
-              <li><strong>25 €</strong><span>sat</span></li>
-              <li><strong>35 €</strong><span>dan</span></li>
-              <li><strong>po dogovoru</strong><span>više dana</span></li>
-            </ul>
-            <button class="svc__cta" data-extra="sauna">Dodaj uz rezervaciju <svg><use href="#i-plus"/></svg></button>
-          </div>
-        </article>
-        <article class="svc" data-reveal style="--i:1">
-          <div class="svc__img"><img src="img/dozivljaji/sup-sm.webp" alt="SUP daske na obali" loading="lazy" decoding="async"></div>
-          <div class="svc__body">
-            <h4>SUP daske</h4>
-            <p>Istražite obalu sa stand up paddle daskom. Uključena kompletna oprema: daska, veslo i prsluk.</p>
-            <ul class="price">
-              <li><strong>5 €</strong><span>sat</span></li>
-              <li><strong>20 €</strong><span>cijeli dan</span></li>
-            </ul>
-            <a class="svc__cta" href="tel:+385994410932">Rezervacije: David · +385 99 441 0932 <svg><use href="#i-phone"/></svg></a>
-          </div>
-        </article>
-        <article class="svc" data-reveal style="--i:2">
-          <div class="svc__img"><img src="img/dozivljaji/bungee-sm.webp" alt="Bungee skok" loading="lazy" decoding="async"></div>
-          <div class="svc__body">
-            <h4>Bungee jumping</h4>
-            <p>Adrenalinski skok s legendarnog Masleničkog mosta. Iskusni tim brine za vašu sigurnost i opremu.</p>
-            <ul class="price">
-              <li><strong>100 €</strong><span>po skoku / osobi</span></li>
-              <li><strong>na upit</strong><span>termini</span></li>
-            </ul>
-            <button class="svc__cta" data-extra="bungee">Dodaj uz rezervaciju <svg><use href="#i-plus"/></svg></button>
-          </div>
-        </article>
-        <article class="svc" data-reveal style="--i:3">
-          <div class="svc__img"><img src="img/dozivljaji/transfer-sm.webp" alt="Kombi za transfer" loading="lazy" decoding="async"></div>
-          <div class="svc__body">
-            <h4>Transfer</h4>
-            <p>Sigurna i udobna vožnja od točke A do točke B, s pouzdanim vozačima i fleksibilnim rasporedom.</p>
-            <ul class="price">
-              <li><strong>po dogovoru</strong><span>cijena</span></li>
-              <li><strong>do 19 h</strong><span>dan ranije</span></li>
-            </ul>
-            <button class="svc__cta" data-extra="transfer">Dodaj uz rezervaciju <svg><use href="#i-plus"/></svg></button>
-          </div>
-        </article>
-      </div>
-    </div>
+    <ul class="plist">
+      <li class="prow" data-img="img/dozivljaji/sauna-sm.webp" data-fade>
+        <span class="prow__n mono">01</span>
+        <div class="prow__main"><h3>Mobilna sauna</h3><p>Privatna sauna na željenoj lokaciji u kampu, s pogledom na more.</p></div>
+        <div class="prow__price"><span><b>25 €</b><i class="mono">sat</i></span><span><b>35 €</b><i class="mono">dan</i></span><span><b>dogovor</b><i class="mono">više dana</i></span></div>
+        <button class="prow__add mono" data-extra="sauna"><svg class="i"><use href="#i-plus"/></svg>Dodaj</button>
+      </li>
+      <li class="prow" data-img="img/dozivljaji/sup-sm.webp" data-fade>
+        <span class="prow__n mono">02</span>
+        <div class="prow__main"><h3>SUP daske</h3><p>Daska, veslo i prsluk uključeni. Rezervacije: David, <a href="tel:+385994410932">+385 99 441 0932</a></p></div>
+        <div class="prow__price"><span><b>5 €</b><i class="mono">sat</i></span><span><b>20 €</b><i class="mono">cijeli dan</i></span></div>
+        <button class="prow__add mono" data-extra="sup"><svg class="i"><use href="#i-plus"/></svg>Dodaj</button>
+      </li>
+      <li class="prow" data-img="img/dozivljaji/bungee-sm.webp" data-fade>
+        <span class="prow__n mono">03</span>
+        <div class="prow__main"><h3>Bungee jumping</h3><p>Skok s legendarnog Masleničkog mosta, uz iskusan tim i svu opremu.</p></div>
+        <div class="prow__price"><span><b>100 €</b><i class="mono">po skoku</i></span><span><b>na upit</b><i class="mono">termini</i></span></div>
+        <button class="prow__add mono" data-extra="bungee"><svg class="i"><use href="#i-plus"/></svg>Dodaj</button>
+      </li>
+      <li class="prow" data-img="img/dozivljaji/transfer-sm.webp" data-fade>
+        <span class="prow__n mono">04</span>
+        <div class="prow__main"><h3>Transfer</h3><p>Sigurna i udobna vožnja s pouzdanim vozačima i fleksibilnim rasporedom.</p></div>
+        <div class="prow__price"><span><b>dogovor</b><i class="mono">cijena</i></span><span><b>do 19 h</b><i class="mono">dan ranije</i></span></div>
+        <button class="prow__add mono" data-extra="transfer"><svg class="i"><use href="#i-plus"/></svg>Dodaj</button>
+      </li>
+    </ul>
   </div>
+  <figure class="float-img" aria-hidden="true"><img alt=""></figure>
 </section>
 
 <!-- ============ OKOLICA ============ -->
-<section class="around section" id="okolica">
-  <div class="container">
-    <div class="section-head">
-      <p class="eyebrow" data-reveal>Ljubač i okolica</p>
-      <h2 class="h2" data-split>Plaže, templari i nebo <em>puno ptica</em></h2>
-      <p class="lead" data-reveal>Pješčane plaže koje se ubrajaju među najljepše u Hrvatskoj, srednjovjekovna tvrđava na brežuljku i netaknuta priroda sjeverne Dalmacije — sve na dohvat ruke.</p>
+<section class="around sec" id="okolica">
+  <div class="wrap">
+    <div class="head head--split">
+      <div>
+        <div class="label" data-fade><span>(05)</span><span>Ljubač i okolica</span></div>
+        <h2 class="h2 h2--xl" data-lines>Plaže, templari i nebo <em>puno ptica</em></h2>
+      </div>
+      <div class="tabs" role="tablist" data-fade>
+        <button role="tab" aria-selected="true" data-tab="plaze">Plaže</button>
+        <button role="tab" aria-selected="false" data-tab="izleti">Izleti</button>
+        <span class="tabs__pill" aria-hidden="true"></span>
+      </div>
     </div>
 
-    <div class="tabs" role="tablist" data-reveal>
-      <button role="tab" aria-selected="true" data-tab="plaze">Plaže</button>
-      <button role="tab" aria-selected="false" data-tab="izleti">Znamenitosti i izleti</button>
-      <span class="tabs__pill" aria-hidden="true"></span>
-    </div>
-
-    <div class="places is-active" data-panel="plaze">
-      <article class="place" data-reveal style="--i:0">
-        <div class="place__img"><img src="img/mjesta/plaza-kamp-sm.webp" alt="Plaža Melin Školjić uz kamp" loading="lazy" decoding="async"></div>
-        <div class="place__body">
-          <span class="tag tag--sea">50 m od kampa</span>
-          <h3>Melin Školjić</h3>
-          <p>Mirna uvala okružena liticama i zelenilom. Kristalno čisto more za plivanje i ronjenje, puno hlada — i školjki.</p>
-        </div>
-      </article>
-      <article class="place" data-reveal style="--i:1">
-        <div class="place__img"><img src="img/mjesta/oseka-sm.webp" alt="Pješčana plaža Oseka" loading="lazy" decoding="async"></div>
-        <div class="place__body">
-          <span class="tag tag--sea">Pješčana · 1,5 km</span>
-          <h3>Oseka</h3>
-          <p>Glavna ljubačka plaža s plitkim morem, savršena za obitelji s malom djecom. Ležaljke, suncobrani, tuševi i beach bar.</p>
-        </div>
-      </article>
-      <article class="place" data-reveal style="--i:2">
-        <div class="place__img"><img src="img/mjesta/plaza-kamen-sm.webp" alt="Stjenovita Poljička plaža" loading="lazy" decoding="async"></div>
-        <div class="place__body">
-          <span class="tag tag--sea">Stjenovita uvala</span>
-          <h3>Poljička plaža</h3>
-          <p>Na rubu prekrasne uvale, s pogledom na okolni krajolik, kristalnim morem i stijenama za istraživanje.</p>
-        </div>
-      </article>
-      <article class="place place--text" data-reveal style="--i:3">
-        <div class="place__art" aria-hidden="true"><svg><use href="#i-wave"/></svg></div>
-        <div class="place__body">
-          <span class="tag tag--sea">Vrsi · šljunčana</span>
-          <h3>Duboka Draga</h3>
-          <p>Osamljena šljunčana plaža okružena stijenama, s kristalnim morem i zadivljujućim pogledom na Velebit.</p>
-        </div>
-      </article>
+    <div class="places" data-panel="plaze">
+      <article class="place"><figure class="place__img bloom"><img src="img/mjesta/plaza-kamp-sm.webp" alt="Plaža Melin Školjić uz kamp" loading="lazy" decoding="async"></figure><div class="place__meta mono"><span>01</span><span>50 m od kampa</span></div><h3>Melin Školjić</h3><p>Mirna uvala okružena liticama i zelenilom. Kristalno more, puno hlada — i školjki.</p></article>
+      <article class="place"><figure class="place__img bloom"><img src="img/mjesta/oseka-sm.webp" alt="Pješčana plaža Oseka" loading="lazy" decoding="async"></figure><div class="place__meta mono"><span>02</span><span>Pješčana · 1,5 km</span></div><h3>Oseka</h3><p>Glavna ljubačka plaža s plitkim morem, idealna za obitelji. Ležaljke, tuševi i beach bar.</p></article>
+      <article class="place"><figure class="place__img bloom"><img src="img/mjesta/plaza-kamen-sm.webp" alt="Stjenovita Poljička plaža" loading="lazy" decoding="async"></figure><div class="place__meta mono"><span>03</span><span>Stjenovita uvala</span></div><h3>Poljička plaža</h3><p>Na rubu prekrasne uvale, s kristalnim morem i stijenama za istraživanje.</p></article>
+      <article class="place"><figure class="place__img bloom"><img src="img/uvod/plaza-cvijece-sm.webp" alt="Obala s pogledom na Velebit" loading="lazy" decoding="async"></figure><div class="place__meta mono"><span>04</span><span>Vrsi · šljunčana</span></div><h3>Duboka Draga</h3><p>Osamljena šljunčana plaža okružena stijenama, s pogledom na Velebit.</p></article>
     </div>
 
     <div class="places" data-panel="izleti" hidden>
-      <article class="place" data-reveal style="--i:0">
-        <div class="place__img"><img src="img/mjesta/stari-grad-sm.webp" alt="Ruševine Starog grada Ljubača" loading="lazy" decoding="async"></div>
-        <div class="place__body">
-          <span class="tag tag--sun">1,9 km</span>
-          <h3>Stari grad Ljubač</h3>
-          <p>Castrum Liube — templarska tvrđava na brežuljku s pogledom na zaljev, uz crkve sv. Ivana Krstitelja i sv. Martina.</p>
-        </div>
-      </article>
-      <article class="place" data-reveal style="--i:1">
-        <div class="place__img"><img src="img/mjesta/put-rtina-sm.webp" alt="Put prema Rtini" loading="lazy" decoding="async"></div>
-        <div class="place__body">
-          <span class="tag tag--sun">Padobranstvo</span>
-          <h3>Rtina</h3>
-          <p>Od 2010. odredište padobranaca iz cijelog svijeta — skok u tandemu s pogledom na Pag, Vir i Velebit.</p>
-        </div>
-      </article>
-      <article class="place" data-reveal style="--i:2">
-        <div class="place__img"><img src="img/mjesta/pupavac-sm.webp" alt="Pupavac na kamenu" loading="lazy" decoding="async"></div>
-        <div class="place__body">
-          <span class="tag tag--sun">Priroda</span>
-          <h3>Promatranje ptica</h3>
-          <p>Paklenica, Vransko jezero i Ninska solana — Ljubač je idealna baza za promatrače ptica sjeverne Dalmacije.</p>
-        </div>
-      </article>
-      <article class="place" data-reveal style="--i:3">
-        <div class="place__img"><img src="img/dozivljaji/bungee-sm.webp" alt="Bungee skok s mosta" loading="lazy" decoding="async"></div>
-        <div class="place__body">
-          <span class="tag tag--sun">Adrenalin</span>
-          <h3>Maslenički most</h3>
-          <p>Bungee skok s legendarnog mosta — pet minuta u životu, ali zauvijek u sjećanju.</p>
-        </div>
-      </article>
+      <article class="place"><figure class="place__img bloom"><img src="img/mjesta/stari-grad-sm.webp" alt="Ruševine Starog grada Ljubača" loading="lazy" decoding="async"></figure><div class="place__meta mono"><span>01</span><span>1,9 km</span></div><h3>Stari grad Ljubač</h3><p>Castrum Liube — templarska tvrđava na brežuljku, uz crkve sv. Ivana i sv. Martina.</p></article>
+      <article class="place"><figure class="place__img bloom"><img src="img/mjesta/put-rtina-sm.webp" alt="Put prema Rtini" loading="lazy" decoding="async"></figure><div class="place__meta mono"><span>02</span><span>Padobranstvo</span></div><h3>Rtina</h3><p>Od 2010. odredište padobranaca — tandem skok s pogledom na Pag, Vir i Velebit.</p></article>
+      <article class="place"><figure class="place__img bloom"><img src="img/mjesta/pupavac-sm.webp" alt="Pupavac na kamenu" loading="lazy" decoding="async"></figure><div class="place__meta mono"><span>03</span><span>Priroda</span></div><h3>Promatranje ptica</h3><p>Paklenica, Vransko jezero i Ninska solana — raj za promatrače ptica.</p></article>
+      <article class="place"><figure class="place__img bloom"><img src="img/dozivljaji/bungee-sm.webp" alt="Bungee skok s mosta" loading="lazy" decoding="async"></figure><div class="place__meta mono"><span>04</span><span>Adrenalin</span></div><h3>Maslenički most</h3><p>Bungee skok — pet minuta u životu, ali zauvijek u sjećanju.</p></article>
     </div>
 
-    <div class="mapbox" data-reveal>
+    <div class="mapbox" data-fade>
       <div class="mapbox__map" id="map" role="img" aria-label="Karta lokacija kampa i kućica na drvetu u Ljubaču">
-        <div class="mapbox__placeholder"><svg><use href="#i-pin"/></svg>Učitavanje karte…</div>
+        <span class="mapbox__ph mono">Učitavanje karte…</span>
       </div>
       <div class="mapbox__side">
         <h3>Kako do nas</h3>
-        <p class="mapbox__addr"><svg><use href="#i-pin"/></svg>Ljubač 6, 23248 Ražanac, Hrvatska</p>
+        <p class="mono">Ljubač 6, 23248 Ražanac</p>
         <ul class="poi">
-          <li><span>Pješčana plaža Melin Školjić</span><b>50 m</b></li>
-          <li><span>Stari grad Ljubač – Castrum Liube</span><b>1,9 km</b></li>
-          <li><span>Bistro Roko</span><b>2,1 km</b></li>
-          <li><span>Food &amp; Drinks SID</span><b>2,1 km</b></li>
+          <li><span>Plaža Melin Školjić</span><b class="mono">50 m</b></li>
+          <li><span>Stari grad Ljubač</span><b class="mono">1,9 km</b></li>
+          <li><span>Bistro Roko</span><b class="mono">2,1 km</b></li>
+          <li><span>Food &amp; Drinks SID</span><b class="mono">2,1 km</b></li>
         </ul>
-        <a class="btn btn--line btn--sm" href="https://www.google.com/maps/dir/?api=1&destination=44.271815,15.289499" target="_blank" rel="noopener">
-          Upute u Google Maps <svg><use href="#i-external"/></svg>
-        </a>
+        <a class="btn btn--white" href="https://www.google.com/maps/dir/?api=1&destination=44.271815,15.289499" target="_blank" rel="noopener" data-roll>Upute u Google Maps</a>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ============ RECENZIJE ============ -->
-<section class="reviews section" id="recenzije">
-  <div class="container">
-    <div class="section-head section-head--split">
+<section class="reviews sec" id="recenzije" data-header="red">
+  <div class="wrap">
+    <div class="head head--split">
       <div>
-        <p class="eyebrow" data-reveal>Recenzije</p>
-        <h2 class="h2" data-split>Što naši gosti <em>kažu o nama</em></h2>
+        <div class="label label--light" data-fade><span>(06)</span><span>Recenzije</span></div>
+        <h2 class="h2 h2--xl h2--light" data-lines>Gosti su se <em>zaljubili</em></h2>
       </div>
-      <div class="reviews__nav" data-reveal>
-        <button class="round" data-rev="-1" aria-label="Prethodna recenzija"><svg><use href="#i-arrow-l"/></svg></button>
-        <button class="round" data-rev="1" aria-label="Sljedeća recenzija"><svg><use href="#i-arrow-r"/></svg></button>
+      <div class="reviews__nav" data-fade>
+        <span class="reviews__count mono"><b>01</b> / 06</span>
+        <button class="round round--light" data-rev="-1" aria-label="Prethodna recenzija"><svg class="i"><use href="#i-arrow-l"/></svg></button>
+        <button class="round round--light" data-rev="1" aria-label="Sljedeća recenzija"><svg class="i"><use href="#i-arrow"/></svg></button>
       </div>
     </div>
-  </div>
-  <div class="reviews__track" data-reveal>
-    <figure class="review">
-      <div class="review__stars" aria-label="5 zvjezdica">★★★★★</div>
-      <h3>Izvrsna usluga!</h3>
-      <blockquote>Proveli smo 4 nevjerojatne noći u Ljubaču. Bolju lokaciju kampa nismo mogli poželjeti. Kamp je udaljen od gužve, s privatnom plažom. Osoblje je bilo super ljubazno i od velike pomoći. Sigurno ćemo se vratiti!</blockquote>
-      <figcaption><span class="review__av">R</span><span><strong>Rune</strong>🇩🇰 Danska</span></figcaption>
-    </figure>
-    <figure class="review">
-      <div class="review__stars" aria-label="5 zvjezdica">★★★★★</div>
-      <h3>Prekrasno!</h3>
-      <blockquote>Bilo nam je fantastično u kampu! Šator je prostran i vrlo udoban, a pogled jednostavno oduzima dah. Osjećate se kao kod kuće, a domaćin je divan! Hvala vam, sigurno ćemo se vratiti!</blockquote>
-      <figcaption><span class="review__av">M</span><span><strong>Myriam</strong>🇫🇷 Francuska</span></figcaption>
-    </figure>
-    <figure class="review">
-      <div class="review__stars" aria-label="5 zvjezdica">★★★★★</div>
-      <h3>Savršen početak našeg odmora!</h3>
-      <blockquote>Bilo je super lijepo u šatoru — ima malu kuhinju za kuhanje te stol i stolice na trijemu. Lokacija je potpuno mirna i na osami u prirodi. Do plaže su 3 minute hoda kroz malu šumicu, gdje možete pronaći mnoge školjke.</blockquote>
-      <figcaption><span class="review__av">N</span><span><strong>Nicola</strong>🇦🇹 Austrija</span></figcaption>
-    </figure>
-    <figure class="review">
-      <div class="review__stars" aria-label="5 zvjezdica">★★★★★</div>
-      <h3>Izvrsna komunikacija!</h3>
-      <blockquote>Komunikacija nije bila komplicirana, kućice na drvetu su fantastične i izgrađene s ljubavlju! Idealno za ljude koji žele pobjeći od masovnog turizma i biti povezani s prirodom.</blockquote>
-      <figcaption><span class="review__av">K</span><span><strong>Kevin</strong>🇩🇪 Njemačka</span></figcaption>
-    </figure>
-    <figure class="review">
-      <div class="review__stars" aria-label="5 zvjezdica">★★★★★</div>
-      <h3>Neponovljivo iskustvo!</h3>
-      <blockquote>Glamping u apsolutnoj idili! Ne samo kampiranje, već i istraživanje područja bilo je jako zabavno. Velika preporuka!</blockquote>
-      <figcaption><span class="review__av">L</span><span><strong>Luise</strong>🇫🇷 Francuska</span></figcaption>
-    </figure>
-    <figure class="review">
-      <div class="review__stars" aria-label="5 zvjezdica">★★★★★</div>
-      <h3>Idealna lokacija!</h3>
-      <blockquote>Posebno se ističe komunikacija s podrškom na licu mjesta. Antonija je uvijek vrlo brzo odgovarala na pitanja i bila izuzetno prijateljski raspoložena. Preporučujem!</blockquote>
-      <figcaption><span class="review__av">E</span><span><strong>Elena</strong>🇩🇪 Njemačka</span></figcaption>
-    </figure>
+
+    <div class="rev" id="rev" data-cursor="Povuci">
+      <figure class="rev__item is-active">
+        <blockquote>„Proveli smo 4 nevjerojatne noći u Ljubaču. Bolju lokaciju kampa nismo mogli poželjeti — daleko od gužve, s privatnom plažom. Osoblje je bilo super ljubazno. Sigurno ćemo se vratiti!”</blockquote>
+        <figcaption><span class="rev__hearts" aria-label="5 od 5">♥♥♥♥♥</span><strong>Rune</strong><span class="mono">Danska</span></figcaption>
+      </figure>
+      <figure class="rev__item">
+        <blockquote>„Bilo nam je fantastično! Šator je prostran i vrlo udoban, a pogled jednostavno oduzima dah. Osjećate se kao kod kuće, a domaćin je divan!”</blockquote>
+        <figcaption><span class="rev__hearts" aria-label="5 od 5">♥♥♥♥♥</span><strong>Myriam</strong><span class="mono">Francuska</span></figcaption>
+      </figure>
+      <figure class="rev__item">
+        <blockquote>„Šator ima malu kuhinju te stol i stolice na trijemu. Lokacija je potpuno mirna i na osami. Do plaže su 3 minute hoda kroz šumicu — a tamo mnogo školjki.”</blockquote>
+        <figcaption><span class="rev__hearts" aria-label="5 od 5">♥♥♥♥♥</span><strong>Nicola</strong><span class="mono">Austrija</span></figcaption>
+      </figure>
+      <figure class="rev__item">
+        <blockquote>„Kućice na drvetu su fantastične i izgrađene s ljubavlju! Idealno za ljude koji žele pobjeći od masovnog turizma i biti povezani s prirodom.”</blockquote>
+        <figcaption><span class="rev__hearts" aria-label="5 od 5">♥♥♥♥♥</span><strong>Kevin</strong><span class="mono">Njemačka</span></figcaption>
+      </figure>
+      <figure class="rev__item">
+        <blockquote>„Glamping u apsolutnoj idili! Ne samo kampiranje, već i istraživanje okolice bilo je jako zabavno. Velika preporuka!”</blockquote>
+        <figcaption><span class="rev__hearts" aria-label="5 od 5">♥♥♥♥♥</span><strong>Luise</strong><span class="mono">Francuska</span></figcaption>
+      </figure>
+      <figure class="rev__item">
+        <blockquote>„Posebno se ističe podrška na licu mjesta. Antonija je uvijek vrlo brzo odgovarala i bila izuzetno ljubazna. Preporučujem!”</blockquote>
+        <figcaption><span class="rev__hearts" aria-label="5 od 5">♥♥♥♥♥</span><strong>Elena</strong><span class="mono">Njemačka</span></figcaption>
+      </figure>
+    </div>
+    <div class="rev__bars" aria-hidden="true"><i class="is-active"></i><i></i><i></i><i></i><i></i><i></i></div>
   </div>
 </section>
 
 <!-- ============ NOVOSTI ============ -->
-<section class="news section" id="novosti">
-  <div class="container">
-    <div class="section-head section-head--split">
+<section class="news sec" id="novosti">
+  <div class="wrap">
+    <div class="head head--split">
       <div>
-        <p class="eyebrow" data-reveal>News feed</p>
-        <h2 class="h2" data-split>Novosti i <em>događanja</em></h2>
+        <div class="label" data-fade><span>(07)</span><span>News feed</span></div>
+        <h2 class="h2 h2--xl" data-lines>Novosti i <em>događanja</em></h2>
       </div>
-      <a class="btn btn--fb" data-fb-link href="https://www.facebook.com/groups/ljubac" target="_blank" rel="noopener" data-reveal>
-        <svg><use href="#i-facebook"/></svg> Pratite nas na Facebooku
+      <a class="btn btn--dark" data-fb-link href="https://www.facebook.com/groups/ljubac" target="_blank" rel="noopener" data-fade>
+        <svg class="i i--fill"><use href="#i-facebook"/></svg> Pratite nas na Facebooku
       </a>
     </div>
-
-    <div class="filters" role="toolbar" aria-label="Filtriraj novosti" data-reveal>
+    <div class="filters" role="toolbar" aria-label="Filtriraj novosti" data-fade>
       <button class="is-active" data-filter="sve">Sve</button>
       <button data-filter="obavijest">Obavijesti</button>
       <button data-filter="dogadanje">Događanja</button>
       <button data-filter="prica">Priče</button>
     </div>
-
     <div class="feed" id="feed" aria-live="polite">
-      <div class="feed__skeleton"></div><div class="feed__skeleton"></div><div class="feed__skeleton"></div>
+      <div class="feed__sk"></div><div class="feed__sk"></div><div class="feed__sk"></div>
     </div>
-    <div class="feed__more">
-      <button class="btn btn--line" id="feedMore" hidden>Učitaj još novosti</button>
-    </div>
+    <div class="feed__more"><button class="btn btn--line" id="feedMore" data-roll hidden>Učitaj još</button></div>
   </div>
 </section>
 
 <!-- ============ REZERVACIJA ============ -->
-<section class="book" id="rezervacija">
-  <div class="book__bg" aria-hidden="true">
-    <picture>
-      <source media="(max-aspect-ratio: 4/5)" srcset="img/hero/zvijezde-m.webp">
-      <img src="img/hero/zvijezde.webp" alt="" loading="lazy" decoding="async" data-parallax="0.1">
-    </picture>
-  </div>
-  <div class="container book__grid">
+<section class="book sec" id="rezervacija" data-header="dark">
+  <div class="wrap book__grid">
     <div class="book__intro">
-      <p class="eyebrow eyebrow--light" data-reveal>Vaš odmor iz snova</p>
-      <h2 class="h2 h2--light" data-split>Napravite mjesta za <em>avanturu!</em></h2>
-      <p class="lead lead--light" data-reveal>
-        Odaberite smještaj i datume te rezervirajte online uz trenutnu provjeru dostupnosti —
-        ili nam pošaljite upit, rado ćemo vam pomoći.
-      </p>
-      <ul class="book__trust" data-reveal>
-        <li><svg><use href="#i-tag"/></svg>Garantiramo najbolje cijene uz izravnu rezervaciju</li>
-        <li><svg><use href="#i-shield"/></svg>Sigurno online plaćanje (PCI-DSS)</li>
-        <li><svg><use href="#i-check"/></svg>PDV uključen · na sljedećem koraku još ništa ne plaćate</li>
+      <div class="label label--light" data-fade><span>(08)</span><span>Rezervacija</span></div>
+      <h2 class="h2 h2--xl h2--light" data-lines>Napravite mjesta za <em>avanturu</em></h2>
+      <p class="lead lead--light" data-fade>Odaberite smještaj i datume te rezervirajte online uz trenutnu provjeru dostupnosti — ili nam pošaljite upit, rado ćemo pomoći.</p>
+      <ul class="book__trust mono" data-fade>
+        <li>Garantiramo najbolje cijene</li>
+        <li>Sigurno online plaćanje (PCI-DSS)</li>
+        <li>PDV uključen · u sljedećem koraku još ništa ne plaćate</li>
       </ul>
-      <div class="book__contact" data-reveal>
-        <a href="tel:+385916179002" class="round round--light" aria-label="Nazovite"><svg><use href="#i-phone"/></svg></a>
-        <a href="https://wa.me/385916179002" target="_blank" rel="noopener" class="round round--light" aria-label="WhatsApp"><svg><use href="#i-whatsapp"/></svg></a>
-        <a href="mailto:visitljubac@ulixtravel.com" class="round round--light" aria-label="E-mail"><svg><use href="#i-mail"/></svg></a>
-        <span>Radujemo se vašem dolasku!</span>
+      <div class="book__contact" data-fade>
+        <a href="tel:+385916179002" class="round round--light" aria-label="Nazovite"><svg class="i"><use href="#i-phone"/></svg></a>
+        <a href="https://wa.me/385916179002" target="_blank" rel="noopener" class="round round--light" aria-label="WhatsApp"><svg class="i i--fill"><use href="#i-whatsapp"/></svg></a>
+        <a href="mailto:visitljubac@ulixtravel.com" class="round round--light" aria-label="E-mail"><svg class="i"><use href="#i-mail"/></svg></a>
       </div>
     </div>
 
-    <form class="widget" id="widget" data-reveal autocomplete="on" novalidate>
+    <form class="widget" id="widget" autocomplete="on" novalidate>
       <div class="widget__step">
-        <p class="widget__label"><span>1</span> Smještaj</p>
+        <p class="widget__label"><span class="mono">01</span> Smještaj</p>
         <div class="stays-pick" role="radiogroup" aria-label="Odaberite smještaj">
-          <label><input type="radio" name="stay" value="bell" checked><span><img src="img/smjestaj/bell-1-sm.webp" alt=""><b>Bell Tent</b><small>do 4 gosta</small></span></label>
-          <label><input type="radio" name="stay" value="tree"><span><img src="img/smjestaj/tree-2-sm.webp" alt=""><b>Kućica na drvetu</b><small>4–5 gostiju</small></span></label>
-          <label><input type="radio" name="stay" value="pitch"><span><img src="img/smjestaj/pitch-2-sm.webp" alt=""><b>Parcela</b><small>do 3 osobe</small></span></label>
+          <label><input type="radio" name="stay" value="bell" checked><span><img src="img/smjestaj/bell-1-sm.webp" alt=""><b>Bell Tent</b><small class="mono">do 4 gosta</small></span></label>
+          <label><input type="radio" name="stay" value="tree"><span><img src="img/smjestaj/tree-2-sm.webp" alt=""><b>Kućica na drvetu</b><small class="mono">4–5 gostiju</small></span></label>
+          <label><input type="radio" name="stay" value="pitch"><span><img src="img/smjestaj/pitch-2-sm.webp" alt=""><b>Parcela</b><small class="mono">do 3 osobe</small></span></label>
         </div>
       </div>
 
       <div class="widget__step">
-        <p class="widget__label"><span>2</span> Datumi <em data-bind="nights"></em></p>
+        <p class="widget__label"><span class="mono">02</span> Datumi <em data-bind="nights"></em></p>
         <div class="calendar" data-calendar="widget" data-months="1"></div>
       </div>
 
       <div class="widget__row">
         <div class="widget__step">
-          <p class="widget__label"><span>3</span> Gosti</p>
+          <p class="widget__label"><span class="mono">03</span> Gosti</p>
           <div class="stepper" data-stepper>
-            <button type="button" data-step="-1" aria-label="Manje gostiju"><svg><use href="#i-minus"/></svg></button>
+            <button type="button" data-step="-1" aria-label="Manje gostiju"><svg class="i"><use href="#i-minus"/></svg></button>
             <output data-bind="guests">2</output>
-            <button type="button" data-step="1" aria-label="Više gostiju"><svg><use href="#i-plus"/></svg></button>
+            <button type="button" data-step="1" aria-label="Više gostiju"><svg class="i"><use href="#i-plus"/></svg></button>
           </div>
         </div>
         <div class="widget__step">
-          <p class="widget__label"><span>4</span> Dodatno</p>
+          <p class="widget__label"><span class="mono">04</span> Dodatno</p>
           <div class="extras">
             <label><input type="checkbox" name="extra" value="sauna"><span>Sauna</span></label>
             <label><input type="checkbox" name="extra" value="sup"><span>SUP</span></label>
@@ -898,19 +615,13 @@
       <p class="widget__warn" data-bind="warn" hidden></p>
 
       <div class="summary">
-        <div>
-          <span class="summary__stay" data-bind="stayName">Glamping Bell Tent West</span>
-          <span class="summary__range" data-bind="summary">Odaberite datume dolaska i odlaska</span>
-        </div>
+        <span class="summary__stay" data-bind="stayName">Glamping Bell Tent West</span>
+        <span class="summary__range mono" data-bind="summary">Odaberite datume dolaska i odlaska</span>
       </div>
 
       <div class="widget__ctas">
-        <button type="submit" class="btn btn--sun btn--block btn--lg" data-magnetic>
-          Rezerviraj online <svg><use href="#i-arrow-r"/></svg>
-        </button>
-        <button type="button" class="btn btn--ghost-dark btn--block" id="inquiryToggle" aria-expanded="false" aria-controls="inquiry">
-          ili pošaljite upit <svg><use href="#i-mail"/></svg>
-        </button>
+        <button type="submit" class="btn btn--red btn--lg btn--block" data-roll data-burst>Rezerviraj online</button>
+        <button type="button" class="btn btn--line btn--block" id="inquiryToggle" aria-expanded="false" aria-controls="inquiry" data-roll>ili pošaljite upit</button>
       </div>
 
       <div class="inquiry" id="inquiry" hidden>
@@ -919,8 +630,8 @@
         <div class="field"><input id="fEmail" name="email" type="email" placeholder=" " autocomplete="email"><label for="fEmail">E-mail</label></div>
         <div class="field"><textarea id="fMsg" name="message" rows="3" placeholder=" "></textarea><label for="fMsg">Poruka (neobavezno)</label></div>
         <div class="inquiry__send">
-          <button type="button" class="btn btn--dark" data-send="mail"><svg><use href="#i-mail"/></svg> Pošalji e-mailom</button>
-          <button type="button" class="btn btn--wa" data-send="wa"><svg><use href="#i-whatsapp"/></svg> WhatsApp</button>
+          <button type="button" class="btn btn--dark" data-send="mail"><svg class="i"><use href="#i-mail"/></svg> E-mail</button>
+          <button type="button" class="btn btn--wa" data-send="wa"><svg class="i i--fill"><use href="#i-whatsapp"/></svg> WhatsApp</button>
         </div>
       </div>
       <p class="widget__fine">Online rezervacija otvara naš sigurni sustav s provjerom dostupnosti, cijenama i plaćanjem.</p>
@@ -930,106 +641,79 @@
 
 </main>
 
-<!-- ============ FOOTER / KONTAKT ============ -->
-<footer class="footer" id="kontakt">
-  <div class="container">
-    <div class="footer__top">
-      <div class="footer__cta">
-        <p class="eyebrow eyebrow--light" data-reveal>Kontakt</p>
-        <h2 class="h2 h2--light" data-split>Radujemo se <em>vašem dolasku!</em></h2>
-        <p class="lead lead--light" data-reveal>Naš ljubazni tim stoji vam na raspolaganju za sve informacije i preporuke kako biste maksimalno iskoristili vrijeme u Ljubaču.</p>
+<!-- ============ FOOTER ============ -->
+<footer class="foot" id="kontakt">
+  <div class="wrap">
+    <div class="foot__top">
+      <div>
+        <div class="label" data-fade><span>(09)</span><span>Kontakt</span></div>
+        <h2 class="h2 h2--xl" data-lines>Radujemo se vašem <em>dolasku</em></h2>
       </div>
-      <div class="footer__cards">
-        <a class="ccard" href="tel:+385916179002" data-reveal style="--i:0">
-          <svg><use href="#i-phone"/></svg><span>Telefon / WhatsApp</span><strong>+385 91 617 9002</strong>
-        </a>
-        <a class="ccard" href="mailto:visitljubac@ulixtravel.com" data-reveal style="--i:1">
-          <svg><use href="#i-mail"/></svg><span>E-mail</span><strong>visitljubac@ulixtravel.com</strong>
-        </a>
-        <a class="ccard" href="https://www.google.com/maps/dir/?api=1&destination=44.271815,15.289499" target="_blank" rel="noopener" data-reveal style="--i:2">
-          <svg><use href="#i-pin"/></svg><span>Lokacija kampa</span><strong>Ljubač 6, 23248 Ražanac</strong>
-        </a>
-      </div>
+      <ul class="foot__contact">
+        <li data-fade><a href="tel:+385916179002"><span class="mono">Telefon / WhatsApp</span><strong>+385 91 617 9002</strong><svg class="i"><use href="#i-arrow"/></svg></a></li>
+        <li data-fade><a href="mailto:visitljubac@ulixtravel.com"><span class="mono">E-mail</span><strong>visitljubac@ulixtravel.com</strong><svg class="i"><use href="#i-arrow"/></svg></a></li>
+        <li data-fade><a href="https://www.google.com/maps/dir/?api=1&destination=44.271815,15.289499" target="_blank" rel="noopener"><span class="mono">Lokacija kampa</span><strong>Ljubač 6, 23248 Ražanac</strong><svg class="i"><use href="#i-arrow"/></svg></a></li>
+      </ul>
     </div>
 
-    <div class="footer__mid">
-      <div class="footer__brand">
-        <a href="#pocetna" class="logo logo--light" aria-label="Visit Ljubač">
-          <svg class="logo__mark" viewBox="0 0 64 64" fill="none" aria-hidden="true">
-            <path d="M32 6 6 56h52L32 6Z" />
-            <path class="logo__heart" d="M32 50s-10-6.2-10-13.4a5.6 5.6 0 0 1 10-3.5 5.6 5.6 0 0 1 10 3.5C42 43.8 32 50 32 50Z" />
-          </svg>
-          <span class="logo__text"><span>Visit</span><em>Ljubač</em></span>
-        </a>
-        <p>Ljubav na prvi pogled zove se Ljubač.</p>
-        <div class="footer__social">
-          <a href="https://www.facebook.com/groups/ljubac" data-fb-link target="_blank" rel="noopener" class="round round--light" aria-label="Facebook"><svg><use href="#i-facebook"/></svg></a>
-          <a href="https://wa.me/385916179002" target="_blank" rel="noopener" class="round round--light" aria-label="WhatsApp"><svg><use href="#i-whatsapp"/></svg></a>
-        </div>
-      </div>
-      <nav class="footer__links" aria-label="Poveznice u podnožju">
-        <div>
-          <h4>Istražite</h4>
-          <a href="#o-nama">O nama</a>
-          <a href="#smjestaj">Smještaj</a>
-          <a href="#dozivljaji">Doživljaji</a>
-          <a href="#okolica">Okolica</a>
-          <a href="#novosti">Novosti</a>
-        </div>
-        <div>
-          <h4>Smještaj</h4>
-          <a href="#stay-bell">Glamping Bell Tent</a>
-          <a href="#stay-tree">Kućice na drvetu</a>
-          <a href="#stay-pitch">Parcela za šator</a>
-          <a href="#rezervacija">Rezervacija</a>
-        </div>
-        <div>
-          <h4>Tvrtka</h4>
-          <p>ULIX d.o.o.<br>Miramarska cesta 26<br>10000 Zagreb, Hrvatska<br>OIB: 26561427801</p>
-        </div>
+    <div class="foot__mid">
+      <nav class="foot__col" aria-label="Istražite">
+        <h4 class="mono">Istražite</h4>
+        <a href="#o-nama">O nama</a><a href="#smjestaj">Smještaj</a><a href="#dozivljaji">Doživljaji</a><a href="#okolica">Okolica</a><a href="#novosti">Novosti</a>
       </nav>
+      <nav class="foot__col" aria-label="Smještaj">
+        <h4 class="mono">Smještaj</h4>
+        <a href="#stay-bell">Bell Tent West</a><a href="#stay-tree">Kućice na drvetu</a><a href="#stay-pitch">Parcela za šator</a><a href="#rezervacija">Rezervacija</a>
+      </nav>
+      <div class="foot__col">
+        <h4 class="mono">Pratite nas</h4>
+        <a href="https://www.facebook.com/groups/ljubac" data-fb-link target="_blank" rel="noopener">Facebook</a>
+        <a href="https://wa.me/385916179002" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+      <div class="foot__col">
+        <h4 class="mono">Tvrtka</h4>
+        <p>ULIX d.o.o.<br>Miramarska cesta 26<br>10000 Zagreb<br>OIB: 26561427801</p>
+      </div>
     </div>
 
-    <div class="footer__big" aria-hidden="true">Ljubač</div>
+    <div class="foot__logo" aria-hidden="true"><svg class="logo logo--line" aria-hidden="true" focusable="false" viewBox="0 0 6630 1252"><g class="lg-letters"><path class="lg-l" style="--i:0" d="M28 449Q28 437 54 421Q80 404 128 391Q175 378 231 378Q287 378 313 394Q339 410 341 429L376 793H390L421 438Q424 410 489 394Q554 378 610 378Q666 378 693 388Q720 397 728 407Q735 417 735 426Q735 434 721 473Q706 511 690 555Q637 695 511 1057Q500 1088 339 1088Q289 1088 273 1081Q257 1074 251 1057Q192 887 110 671Q28 455 28 449Z"/><path class="lg-l" style="--i:1" d="M1063 554V1064Q1063 1075 1006 1082Q948 1088 888 1088Q827 1088 810 1083Q792 1077 792 1064V572Q792 550 849 529Q906 508 972 508Q1063 508 1063 554Z"/><path class="lg-l" style="--i:2" d="M1135 1019Q1135 963 1151 903Q1167 842 1189 842Q1193 842 1272 869Q1351 896 1391 896Q1431 896 1443 888Q1455 879 1455 863Q1455 847 1433 835Q1411 822 1378 813Q1345 803 1307 785Q1268 767 1235 745Q1202 723 1180 683Q1158 642 1158 590Q1158 368 1423 368Q1522 368 1594 381Q1666 393 1696 409Q1725 424 1725 439Q1725 491 1701 551Q1676 611 1653 611Q1649 611 1627 602Q1561 573 1518 573Q1474 573 1459 581Q1443 589 1443 606Q1443 622 1465 633Q1487 643 1520 652Q1552 660 1591 678Q1629 695 1662 719Q1695 742 1717 785Q1739 828 1739 885Q1739 945 1708 994Q1689 1024 1659 1046Q1629 1068 1576 1083Q1522 1097 1438 1097Q1353 1097 1277 1083Q1201 1069 1168 1052Q1135 1035 1135 1019Z"/><path class="lg-l" style="--i:3" d="M2082 554V1064Q2082 1075 2025 1082Q1967 1088 1907 1088Q1846 1088 1829 1083Q1811 1077 1811 1064V572Q1811 550 1868 529Q1925 508 1991 508Q2082 508 2082 554Z"/><path class="lg-l" style="--i:4" d="M2315 1064V634H2176Q2165 634 2157 606Q2149 578 2149 523Q2149 467 2161 423Q2173 378 2193 378H2734Q2749 378 2755 406Q2760 434 2760 487Q2760 540 2749 587Q2738 634 2719 634H2594V1064Q2594 1075 2533 1082Q2471 1088 2410 1088Q2348 1088 2332 1083Q2315 1077 2315 1064Z"/><path class="lg-l" style="--i:5" d="M2916 1088Q2866 1088 2849 1083Q2832 1077 2832 1064V442Q2832 420 2890 399Q2948 377 3020 377Q3084 377 3104 404Q3111 414 3111 424V867Q3233 859 3295 859Q3316 859 3316 926Q3316 992 3307 1040Q3298 1088 3283 1088Z"/><path class="lg-l" style="--i:6" d="M3390 1196Q3358 1169 3358 1112Q3358 1030 3400 1030Q3413 1030 3420 1026Q3439 1017 3439 964V443Q3439 421 3497 400Q3554 378 3619 378Q3718 378 3718 425V978Q3718 1047 3712 1088Q3706 1129 3687 1163Q3667 1196 3630 1210Q3592 1223 3545 1223Q3497 1223 3475 1222Q3453 1220 3429 1214Q3404 1207 3390 1196Z"/><path class="lg-l" style="--i:7" d="M3810 809V442Q3810 417 3867 397Q3923 377 3998 377Q4058 377 4076 400Q4089 418 4089 431V729Q4089 842 4098 879Q4106 915 4134 915Q4162 915 4170 880Q4177 844 4177 728V442Q4177 417 4234 397Q4290 377 4364 377Q4427 377 4444 400Q4456 418 4456 431V809Q4456 953 4374 1025Q4291 1096 4135 1096Q3978 1096 3894 1025Q3810 953 3810 809Z"/><path class="lg-l" style="--i:8" d="M4851 1088H4632Q4582 1088 4565 1081Q4548 1074 4548 1059V416Q4548 368 4837 368Q5003 368 5066 400Q5130 433 5148 484Q5158 514 5158 554Q5158 632 5132 671Q5105 710 5074 715Q5121 725 5152 761Q5183 797 5183 883Q5183 983 5122 1031Q5069 1073 4960 1084Q4914 1088 4851 1088ZM4852 652Q4903 652 4903 584Q4903 550 4890 534Q4876 517 4859 517H4827V652ZM4827 939H4852Q4903 939 4903 871Q4903 837 4890 821Q4876 804 4859 804H4827Z"/><path class="lg-l" style="--i:9" d="M5235 1040Q5235 1016 5324 734Q5413 451 5426 408Q5431 395 5507 387Q5582 378 5669 378Q5755 378 5764 408Q5953 1036 5953 1046Q5953 1056 5941 1066Q5913 1088 5830 1088Q5653 1088 5649 1046L5642 981H5546L5541 1037Q5539 1066 5511 1077Q5482 1088 5408 1088Q5334 1088 5285 1075Q5235 1061 5235 1040ZM5621 791 5606 611H5584L5567 791Z"/><path class="lg-l" style="--i:10" d="M6056 958Q6005 872 6005 736Q6005 645 6034 575Q6062 505 6103 467Q6143 429 6195 406Q6279 368 6364 368Q6486 368 6539 388Q6563 397 6582 416Q6601 435 6601 471Q6601 507 6584 562Q6566 617 6533 617Q6523 617 6459 601Q6395 585 6372 585Q6337 585 6313 624Q6288 663 6288 735Q6288 807 6310 847Q6331 887 6366 887Q6391 887 6457 867Q6522 846 6533 846Q6564 846 6582 903Q6599 960 6599 995Q6599 1030 6578 1051Q6556 1071 6516 1081Q6476 1090 6435 1094Q6393 1097 6354 1097Q6314 1097 6293 1095Q6271 1093 6236 1085Q6201 1077 6172 1063Q6143 1049 6111 1022Q6078 995 6056 958Z"/></g><g class="lg-hearts"><path class="lg-h" style="--h:0" d="M928 269C928 213 883 182 841 182C793 182 754 224 754 276C754 352 848 411 928 470C1008 411 1101 352 1101 276C1101 224 1063 182 1015 182C973 182 928 213 928 269Z"/><path class="lg-h" style="--h:1" d="M1947 269C1947 213 1902 182 1860 182C1812 182 1773 224 1773 276C1773 352 1867 411 1947 470C2027 411 2120 352 2120 276C2120 224 2082 182 2034 182C1992 182 1947 213 1947 269Z"/><path class="lg-h" style="--h:2" d="M6312 115C6312 60 6267 28 6225 28C6177 28 6139 70 6139 122C6139 198 6232 257 6312 316C6392 257 6486 198 6486 122C6486 70 6447 28 6399 28C6357 28 6312 60 6312 115Z"/></g></svg></div>
 
-    <div class="footer__bottom">
+    <div class="foot__bar mono">
       <span>© <span id="year">2026</span> Visit Ljubač · ULIX Travel</span>
-      <span>
-        <a href="https://www.visitljubac.com/hr/opci-uvjeti-poslovanja/" target="_blank" rel="noopener">Uvjeti poslovanja</a>
-        <a href="https://www.visitljubac.com/hr/politika-privatnosti/" target="_blank" rel="noopener">Politika privatnosti</a>
-      </span>
+      <span class="foot__legal"><a href="https://www.visitljubac.com/hr/opci-uvjeti-poslovanja/" target="_blank" rel="noopener">Uvjeti poslovanja</a><a href="https://www.visitljubac.com/hr/politika-privatnosti/" target="_blank" rel="noopener">Privatnost</a></span>
+      <a href="#top">Na vrh ↑</a>
     </div>
   </div>
 </footer>
 
 <!-- Mobilna traka -->
 <div class="dock" id="dock">
-  <a href="tel:+385916179002" class="dock__icon" aria-label="Nazovite"><svg><use href="#i-phone"/></svg></a>
-  <a href="https://wa.me/385916179002" target="_blank" rel="noopener" class="dock__icon" aria-label="WhatsApp"><svg><use href="#i-whatsapp"/></svg></a>
-  <a href="#rezervacija" class="dock__main">Rezervirajte boravak <svg><use href="#i-arrow-r"/></svg></a>
+  <a href="tel:+385916179002" class="dock__icon" aria-label="Nazovite"><svg class="i"><use href="#i-phone"/></svg></a>
+  <a href="https://wa.me/385916179002" target="_blank" rel="noopener" class="dock__icon" aria-label="WhatsApp"><svg class="i i--fill"><use href="#i-whatsapp"/></svg></a>
+  <a href="#rezervacija" class="dock__main" data-burst>Rezervirajte boravak <svg class="i i--fill"><use href="#i-heart"/></svg></a>
 </div>
 
 <!-- Lightbox -->
 <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Galerija fotografija" hidden>
   <div class="lightbox__top">
     <span class="lightbox__title"></span>
-    <span class="lightbox__count"></span>
-    <button class="round round--light lightbox__close" aria-label="Zatvori galeriju"><svg><use href="#i-close"/></svg></button>
+    <span class="lightbox__count mono"></span>
+    <button class="round round--light lightbox__close" aria-label="Zatvori galeriju"><svg class="i"><use href="#i-close"/></svg></button>
   </div>
-  <div class="lightbox__track"></div>
-  <button class="round round--light lightbox__nav lightbox__nav--prev" aria-label="Prethodna"><svg><use href="#i-arrow-l"/></svg></button>
-  <button class="round round--light lightbox__nav lightbox__nav--next" aria-label="Sljedeća"><svg><use href="#i-arrow-r"/></svg></button>
+  <div class="lightbox__track" data-lenis-prevent></div>
+  <button class="round round--light lightbox__nav lightbox__nav--prev" aria-label="Prethodna"><svg class="i"><use href="#i-arrow-l"/></svg></button>
+  <button class="round round--light lightbox__nav lightbox__nav--next" aria-label="Sljedeća"><svg class="i"><use href="#i-arrow"/></svg></button>
 </div>
 
 <!-- Članak -->
 <div class="modal" id="article" role="dialog" aria-modal="true" aria-labelledby="articleTitle" hidden>
   <div class="modal__backdrop" data-close></div>
   <div class="modal__sheet">
-    <button class="round modal__close" data-close aria-label="Zatvori"><svg><use href="#i-close"/></svg></button>
-    <div class="modal__scroll">
+    <button class="round modal__close" data-close aria-label="Zatvori"><svg class="i"><use href="#i-close"/></svg></button>
+    <div class="modal__scroll" data-lenis-prevent>
       <figure class="modal__img"><img alt=""></figure>
       <div class="modal__body">
-        <p class="modal__meta"></p>
+        <p class="modal__meta mono"></p>
         <h2 id="articleTitle" class="modal__title"></h2>
         <div class="modal__text"></div>
         <div class="modal__actions"></div>
@@ -1041,50 +725,19 @@
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <!-- ============ IKONE ============ -->
-<svg class="sprite" width="0" height="0" style="position:absolute" aria-hidden="true">
+<svg class="sprite" aria-hidden="true">
   <defs>
-    <symbol id="i-tent" viewBox="0 0 24 24"><path d="M3 20h18M12 4 3.5 20M12 4l8.5 16M9.5 20 12 14.5 14.5 20"/></symbol>
-    <symbol id="i-wave" viewBox="0 0 24 24"><path d="M2 7c2.5 0 2.5-2 5-2s2.5 2 5 2 2.5-2 5-2 2.5 2 5 2M2 12c2.5 0 2.5-2 5-2s2.5 2 5 2 2.5-2 5-2 2.5 2 5 2M2 17c2.5 0 2.5-2 5-2s2.5 2 5 2 2.5-2 5-2 2.5 2 5 2"/></symbol>
-    <symbol id="i-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m15.5 8.5-2 5-5 2 2-5z"/></symbol>
-    <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20s-7.5-4.6-7.5-10.2A4.2 4.2 0 0 1 12 7.2a4.2 4.2 0 0 1 7.5 2.6C19.5 15.4 12 20 12 20z"/></symbol>
-    <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M16 5.2a3 3 0 0 1 0 5.6M18 14.3c1.8.9 3 2.8 3 5"/></symbol>
-    <symbol id="i-ruler" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="2"/><path d="M3.5 9h4M3.5 14.5h4M9 3.5v4M14.5 3.5v4"/></symbol>
-    <symbol id="i-beach" viewBox="0 0 24 24"><path d="M4 12a8 8 0 0 1 16 0zM12 12v8M4 20.5h16"/></symbol>
-    <symbol id="i-wifi" viewBox="0 0 24 24"><path d="M2.5 9a14 14 0 0 1 19 0M5.5 12.5a9.5 9.5 0 0 1 13 0M8.8 16a5 5 0 0 1 6.4 0"/><circle cx="12" cy="19" r=".9"/></symbol>
-    <symbol id="i-parking" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="4"/><path d="M9.5 16.5v-9h3.2a2.8 2.8 0 0 1 0 5.6H9.5"/></symbol>
-    <symbol id="i-kitchen" viewBox="0 0 24 24"><path d="M4 10h16v4.5A5.5 5.5 0 0 1 14.5 20h-5A5.5 5.5 0 0 1 4 14.5zM2 10h2M20 10h2M9 3.5v3M12 3.5v3M15 3.5v3"/></symbol>
-    <symbol id="i-shower" viewBox="0 0 24 24"><path d="M5 21V6.5a2.5 2.5 0 0 1 5 0V7"/><path d="M6.5 11a5.5 5.5 0 0 1 11 0z"/><path d="M9 14.5v1M12 14.5v2M15 14.5v1M10.5 18.5v1M13.5 18.5v1"/></symbol>
-    <symbol id="i-flame" viewBox="0 0 24 24"><path d="M12 21c-3.9 0-7-2.7-7-6.5 0-3.2 2.4-5.3 3.8-7.5.5 1.6 1.4 2.6 2.4 3C11 7 12 4.5 14 3c0 3.5 5 5.4 5 11.5 0 3.8-3.1 6.5-7 6.5z"/></symbol>
-    <symbol id="i-fridge" viewBox="0 0 24 24"><rect x="6" y="3" width="12" height="18" rx="2"/><path d="M6 10h12M9 6v2M9 13v3"/></symbol>
-    <symbol id="i-bed" viewBox="0 0 24 24"><path d="M3 19V6M3 15h18v4M21 15v-3a3 3 0 0 0-3-3h-7v6"/><circle cx="7" cy="11.5" r="2"/></symbol>
-    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2.5 12h2M19.5 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></symbol>
-    <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M5 19c0-8 5-14 15-14 0 10-6 15-14 15"/><path d="M5 19l8-8"/></symbol>
-    <symbol id="i-paw" viewBox="0 0 24 24"><circle cx="6.5" cy="10.5" r="1.8"/><circle cx="10" cy="6.5" r="1.8"/><circle cx="14.5" cy="6.5" r="1.8"/><circle cx="18" cy="10.5" r="1.8"/><path d="M8 17.2c0-2.6 2-5.2 4.3-5.2s4.3 2.6 4.3 5.2c0 1.7-1.3 2.5-2.6 2.2-.8-.2-1.2-.5-1.7-.5s-1 .3-1.7.5C9.3 19.7 8 18.9 8 17.2z"/></symbol>
-    <symbol id="i-arrow-r" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-heart" viewBox="-1.05 -0.9 2.1 1.85"><path fill="currentColor" stroke="none" d="M0 -.3C0-.62-.26-.8-.5-.8-.78-.8-1-.56-1-.26-1 .18-.46.52 0 .86.46.52 1 .18 1-.26 1-.56.78-.8.5-.8.26-.8 0-.62 0-.3Z"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
     <symbol id="i-arrow-l" viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"/></symbol>
     <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
     <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
     <symbol id="i-minus" viewBox="0 0 24 24"><path d="M5 12h14"/></symbol>
     <symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 4h3.5l2 5-2.5 1.5a11 11 0 0 0 5.5 5.5L15 13.5l5 2V19a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></symbol>
     <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m3.5 7 8.5 6 8.5-6"/></symbol>
-    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-12a7 7 0 0 1 14 0c0 5.8-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></symbol>
-    <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="16" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/></symbol>
-    <symbol id="i-grid" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.5"/></symbol>
-    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></symbol>
-    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3 4.5 6v6c0 4.8 3.3 7.8 7.5 9 4.2-1.2 7.5-4.2 7.5-9V6z"/><path d="m9 12 2 2 4-4"/></symbol>
-    <symbol id="i-tag" viewBox="0 0 24 24"><path d="M3.5 12V4.5a1 1 0 0 1 1-1H12l8.5 8.5-8.5 8.5z"/><circle cx="8" cy="8" r="1.5"/></symbol>
     <symbol id="i-external" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></symbol>
-    <symbol id="i-steam" viewBox="0 0 24 24"><path d="M4 20.5h16M6 20.5v-6h12v6M8 11c0-1.5 1.5-1.5 1.5-3S8 6.5 8 5M12 11c0-1.5 1.5-1.5 1.5-3S12 6.5 12 5M16 11c0-1.5 1.5-1.5 1.5-3S16 6.5 16 5"/></symbol>
-    <symbol id="i-van" viewBox="0 0 24 24"><path d="M2.5 16V7a2 2 0 0 1 2-2h10.5l5 5v6a1 1 0 0 1-1 1h-1M2.5 16a1 1 0 0 0 1 1h1M9 17h5.5M15 5v5h5"/><circle cx="6.5" cy="17" r="2"/><circle cx="16.5" cy="17" r="2"/></symbol>
-    <symbol id="i-lotus" viewBox="0 0 24 24"><path d="M12 20c-4.2 0-8-2-9-6 3 0 6.2 1 9 4 2.8-3 6-4 9-4-1 4-4.8 6-9 6z"/><path d="M12 18c-2.2-2.2-3.2-5.4-2-9.5 1 1 2 2 2 2s1-1 2-2c1.2 4.1.2 7.3-2 9.5z"/></symbol>
-    <symbol id="i-bike" viewBox="0 0 24 24"><circle cx="5.5" cy="16" r="3.5"/><circle cx="18.5" cy="16" r="3.5"/><path d="M5.5 16 9 9h6.5l3 7M9 9 7.5 6H5.5M15 6h2l-1.5 3M9 9l3.5 7h6"/></symbol>
-    <symbol id="i-paint" viewBox="0 0 24 24"><path d="M12 3a9 9 0 0 0 0 18c1.1 0 1.6-.9 1.2-1.8-.5-1.2.3-2.2 1.6-2.2H17a4 4 0 0 0 4-4c0-5.5-4-10-9-10z"/><circle cx="7.5" cy="11" r="1"/><circle cx="10" cy="7" r="1"/><circle cx="15" cy="7" r="1"/></symbol>
-    <symbol id="i-olive" viewBox="0 0 24 24"><path d="M4 20C8 16 12 10 20 4"/><path d="M8.5 15.5c-2.5.5-4-.5-4.5-2 1.8-.9 3.8-.5 4.5 2zM12 11.5c.4-2.5 2-3.6 3.6-3.5-.1 2-1.4 3.4-3.6 3.5zM12.2 11.8c-2.3 1-4 .5-4.8-.9 1.6-1.2 3.8-.9 4.8.9zM16.3 7.6c.7-2.3 2.2-3.2 3.7-2.9-.4 1.9-1.8 3.1-3.7 2.9z"/><circle cx="16.5" cy="12.5" r="1.8"/></symbol>
-    <symbol id="i-sprout" viewBox="0 0 24 24"><path d="M12 20.5v-8.5M12 12c0-4-3-6-7-6 0 4 3 6 7 6zM12 12c0-3 2-5 6-5 0 3-2 5-6 5zM6 20.5h12"/></symbol>
-    <symbol id="i-child" viewBox="0 0 24 24"><circle cx="12" cy="5" r="2.2"/><path d="M7 10.5h10M12 10.5v5M9 21l3-5.5 3 5.5"/></symbol>
-    <symbol id="i-basket" viewBox="0 0 24 24"><path d="M3 10h18l-2 9a2 2 0 0 1-2 1.5H7A2 2 0 0 1 5 19zM8 10l3-6M16 10l-3-6M9 14v3M12 14v3M15 14v3"/></symbol>
-    <symbol id="i-whatsapp" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.39-1.47-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.21 3.07.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.7.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.18-1.41-.08-.13-.28-.2-.57-.35m-5.42 7.4h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.89-9.88 2.64 0 5.12 1.03 6.99 2.9a9.83 9.83 0 0 1 2.89 6.99c0 5.45-4.44 9.88-9.88 9.88m8.41-18.3A11.82 11.82 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.68 1.45h.01c6.55 0 11.89-5.34 11.89-11.89a11.82 11.82 0 0 0-3.48-8.41z"/></symbol>
-    <symbol id="i-facebook" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M9.1 23.69v-7.98H6.63v-3.67H9.1v-1.58c0-4.09 1.85-5.98 5.86-5.98.4 0 .96.04 1.47.1.39.05.77.11 1.14.2v3.32a8.6 8.6 0 0 0-.65-.03c-.24-.01-.49-.01-.73-.01-.71 0-1.26.1-1.68.31-.28.14-.51.36-.68.62-.26.42-.37 1-.37 1.75v1.3h3.92l-.39 2.1-.29 1.57h-3.24v8.24C19.4 23.24 24 18.18 24 12.04 24 5.42 18.63.04 12 .04S0 5.42 0 12.04c0 5.63 3.87 10.35 9.1 11.65z"/></symbol>
+    <symbol id="i-whatsapp" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.39-1.47-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.21 3.07.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.7.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.18-1.41-.08-.13-.28-.2-.57-.35m-5.42 7.4h-.01a9.87 9.87 0 0 1-5.030-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.89-9.88 2.64 0 5.12 1.03 6.99 2.9a9.83 9.83 0 0 1 2.89 6.99c0 5.45-4.44 9.88-9.88 9.88m8.41-18.3A11.82 11.82 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.68 1.45h.01c6.55 0 11.89-5.34 11.89-11.89a11.82 11.82 0 0 0-3.48-8.41z"/></symbol>
+    <symbol id="i-facebook" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M9.1 23.69v-7.98H6.63v-3.67H9.1v-1.58c0-4.09 1.85-5.98 5.86-5.98.4 0 .96.04 1.47.1.39.05.77.11 1.14.2v3.32a8.6 8.6 0 0 0-.65-.03c-.24-.01-.49-.01-.73-.01-.71 0-1.26.1-1.68.31-.28.14-.51.36-.68.62-.26.42-.37 1-.37 1.75v1.3h3.92l-.39 2.1-.29 1.57h-3.24v8.24C19.4 23.24 24 18.18 24 12.04 24 5.42 18.63.04 12 .04S0 5.42 0 12.04c0 5.630 3.87 10.35 9.1 11.65z"/></symbol>
   </defs>
 </svg>
 

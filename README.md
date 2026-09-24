@@ -9,7 +9,7 @@ Logotipi su u mapi `brand/`: SVG (vektor, za tisak) i PNG s prozirnom pozadinom,
 te kao vodoravni i složeni (dva reda) logo. Tu je i ikona aplikacije (`icon-512.png`).
 Fontovi: Titan One (naslovi), Geist i Geist Mono (tekst).
 
-**Stranica:** https://vizura-studio.com/
+**Stranica:** https://kriscro99.github.io/visit-ljubac/
 
 ## Rezervacije
 

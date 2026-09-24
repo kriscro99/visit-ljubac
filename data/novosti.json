@@ -1,0 +1,115 @@
+{
+  "_upute": "Nova objava = novi blok u popisu 'novosti'. Polja: datum (GGGG-MM-DD), kategorija (obavijest | dogadanje | prica), naslov, sazetak, tekst (popis odlomaka), slika (putanja ili URL), facebook (poveznica na objavu, neobavezno), poveznice (neobavezno). Redoslijed nije bitan — objave se slažu po datumu.",
+  "novosti": [
+    {
+      "id": "sup-najam",
+      "datum": "2026-08-26",
+      "kategorija": "obavijest",
+      "naslov": "Novo u kampu: najam SUP daski",
+      "sazetak": "Istražite obalu Ljubača sa stand up paddle daskom — 5 € po satu ili 20 € za cijeli dan, uz kompletnu opremu.",
+      "slika": "img/dozivljaji/sup.webp",
+      "tekst": [
+        "Uživajte u aktivnom odmoru i istražite obalu s našim SUP daskama (Stand Up Paddle)! 🏄‍♂️🌊",
+        "Cijena najma je 5 € za jedan sat ili 20 € za cijeli dan. Cijena uključuje kompletnu opremu: dasku, veslo i prsluk za spašavanje.",
+        "Kontakt i rezervacije: David, +385 99 441 0932.",
+        "Želimo vam ugodan dan na vodi! ☀️"
+      ],
+      "poveznice": [
+        { "naziv": "Nazovite Davida", "url": "tel:+385994410932" }
+      ]
+    },
+    {
+      "id": "yoga-retreat",
+      "datum": "2024-05-12",
+      "kategorija": "dogadanje",
+      "naslov": "Yoga Retreat u Ljubaču",
+      "sazetak": "Zaronite u ocean spokoja — jutarnje meditacije, Vinyasa joga među maslinama i veganske večere pod zvijezdama.",
+      "slika": "img/mjesta/oseka.webp",
+      "tekst": [
+        "Ugniježđen na vrhovima brda Ljubača, naš retreat poziv je u svetište mira usred maslinika i voćnjaka punih plodova. Ovdje vas dva iskusna jogija vode na putovanje samootkrića i obnove.",
+        "Osjetite nježan dodir jadranske bure dok prolazi kroz borove i šapće među lišćem maslina. Svaki dan nudi trenutke za ponovno povezivanje s prirodom — od skupljanja divljih blaga do opuštenih šetnji uz šljunčanu obalu.",
+        "Dok sunce izlazi, meditiramo i prakticiramo pranayamu, a zatim slijedi doručak pripremljen s pažnjom i lokalnim okusima. Tijekom dana čekaju vas energične Vinyasa seanse, slikanje ili kontemplativne šetnje do Rtine. Kako pada večer, okupljamo se na mirnoj seansi joge uz jadranski zalazak sunca, a potom slijedi hranjiva veganska ili vegetarijanska večera pod zvijezdama.",
+        "Retreat mindful trenutaka zamišljen je kao kratak, ali sladak bijeg u prirodu, a Blissful Balance Yoga retreat vodi vas kroz ples čakri uz tematske Vinyasa satove svaki dan.",
+        "Za više informacija i rezervaciju mjesta posjetite poveznice ispod."
+      ],
+      "poveznice": [
+        { "naziv": "5-dnevni yoga retreat", "url": "https://www.bookyogaretreats.com/share/q3DqYATnOA/5-days-yoga-retreat-croatia" },
+        { "naziv": "Soul Bliss Yoga Dance", "url": "https://www.bookyogaretreats.com/share/un-c95WRZw/soul-bliss-yoga-dance-community" },
+        { "naziv": "Soul Bliss Yoga Retreats", "url": "https://soulblissyogaretreats.weebly.com/" }
+      ]
+    },
+    {
+      "id": "promatranje-ptica",
+      "datum": "2024-02-14",
+      "kategorija": "prica",
+      "naslov": "Promatranje ptica: sjeverna Dalmacija, raj za promatrače",
+      "sazetak": "Između Velebita i Jadrana, uvala Ljubač idealna je baza za otkrivanje Paklenice, Vranskog jezera i Ninske solane.",
+      "slika": "img/mjesta/pupavac.webp",
+      "tekst": [
+        "Ugniježđena između veličanstvenog Velebita i kristalno čistog Jadranskog mora nalazi se uvala Ljubač — strateški smještena usred nekih od najljepših hrvatskih područja za promatranje ptica.",
+        "Sjeverna Dalmacija može se pohvaliti vrhunskim lokacijama poput Nacionalnog parka Paklenica s dramatičnim liticama, Vranskog jezera — močvarnog područja koje vrvi životom — te Ninske solane uz samu obalu.",
+        "Uobičajene vrste koje možete vidjeti su pčelarica, crvenoleđi svračak, pupavac, slavuj i strnadica, a neke ptice koje je teško vidjeti u ostatku Europe ovdje je relativno lako promatrati — poput sove ušare, jarebice kamenjarke, brgljeza kamenjara i zlatovrane.",
+        "U proljeće i jesen obala i jezera postaju važna usputna stanica za ptice selice: od travnja do lipnja vraćaju se iz toplijih krajeva, a od rujna do studenoga kreću prema dalekim horizontima.",
+        "Kroz suradnju s organizacijama Croatia Birding i Birdingplaces.eu potičemo održivo promatranje ptica i očuvanje prirodne baštine. Poštivanje prirode i što manje ometanja uvijek su na prvom mjestu.",
+        "Fotografije: Miroslav Photography"
+      ]
+    },
+    {
+      "id": "volonteri",
+      "datum": "2023-03-15",
+      "kategorija": "prica",
+      "naslov": "Volonteri obnavljaju povijest i prirodu Ljubača",
+      "sazetak": "Obrtnici i volonteri iz cijele Europe zajedno su oživjeli povijesne zidove i izgradili prirodni bazen.",
+      "slika": "img/mjesta/volonteri.webp",
+      "tekst": [
+        "U Ljubaču su se okupili obrtnici i dobrovoljci kako bi oživjeli povijesne zidove i stvorili prirodni bazen. Tijekom dva tjedna radili su zajedno na obnovi, koristeći održive prakse.",
+        "Cilj je bio dvostruk: sačuvati baštinu i istovremeno provesti ekološki prihvatljiva rješenja. Jednostavnim alatima koji podsjećaju na stara vremena volonteri su ugradili i kamenje koje su donijeli iz svojih sela.",
+        "Unatoč teškom radu i nepredvidljivom vremenu, naučili su raditi s glinom, zemljom, drvom i kamenom uz lokalne majstore, a usput otkrili i okolnu divljinu i floru.",
+        "Projekt nije bio samo fizička obnova, već i izgradnja zajednice — sudionici svih dobnih skupina dijelili su priče i trenutke. Zahvaljujemo im na njihovu radu i radujemo se ponovnom druženju u Ljubaču!"
+      ]
+    },
+    {
+      "id": "plaze",
+      "datum": "2023-03-13",
+      "kategorija": "prica",
+      "naslov": "Naš popis: sve plaže u Ljubaču",
+      "sazetak": "Od pješčane Oseke za obitelji do skrivene uvale Melin Školjić — vodič kroz najljepše plaže Ljubača i okolice.",
+      "slika": "img/mjesta/plaza-kamen.webp",
+      "tekst": [
+        "Ljubač, skriveni dragulj na obali sjeverne Dalmacije, raj je za ljubitelje plaža. Kristalno čisto more i zadivljujući krajolici čine ga savršenim mjestom za odmor.",
+        "Oseka je glavna ljubačka plaža — prostrana pješčana plaža duga više od 1,5 kilometara, savršena za obitelji s malom djecom. Plitko more i blagi valovi, ležaljke, suncobrani, tuševi i bar na plaži čine je vrlo ugodnim mjestom za cijeli dan.",
+        "Za mirniji doživljaj tu je Melin Školjić — mala uvala okružena liticama i zelenilom. Voda je kristalno čista i idealna za plivanje i ronjenje, a hlada ima napretek.",
+        "Poljička plaža stjenovita je plaža na rubu prekrasne uvale, s pogledom na okolni krajolik i mnogo stijena za istraživanje.",
+        "U obližnjim Vrsima smjestila se Duboka Draga — šljunčana plaža okružena stijenama, s osamljenošću, pogledom na Velebit i kristalnim morem koje ostavlja bez daha."
+      ]
+    },
+    {
+      "id": "templari",
+      "datum": "2023-03-13",
+      "kategorija": "prica",
+      "naslov": "Stari grad Ljubač – dom templara",
+      "sazetak": "Tvrđava na brežuljku, romaničke crkve i priča o vitezovima koji su čuvali ovaj kraj.",
+      "slika": "img/mjesta/stari-grad.webp",
+      "tekst": [
+        "Ljubač je malo, slikovito mjesto bogate povijesti, poznato i kao dom templara — vjerskog viteškog reda osnovanog u 12. stoljeću, poznatog po hrabrosti, disciplini i ulozi u križarskim ratovima.",
+        "Ljubač je bio ključno uporište templara u regiji. Tvrđavu su podigli strateški na brežuljku, s prekrasnim pogledom na selo i zaljev. Iako danas većim dijelom leži u ruševinama, ostaje svjedočanstvo templarskog nasljeđa.",
+        "Crkva sv. Ivana Krstitelja iz 12. stoljeća i danas stoji, izdržavši brojne ratove i invazije. Mala romanička crkva sv. Martina iz 11. stoljeća, posvećena zaštitniku putnika, bila je mjesto okupljanja templara prije njihovih pohoda.",
+        "Istraživanje ruševina tvrđave i srednjovjekovnih crkava doživljaj je koji ne smijete propustiti — Stari grad udaljen je samo 1,9 km od našeg kampa."
+      ]
+    },
+    {
+      "id": "rtina",
+      "datum": "2023-03-13",
+      "kategorija": "prica",
+      "naslov": "Rtina – dobrodošlica padobrancima od 2010.",
+      "sazetak": "Skok iznad Velebita, Paga i Vira — Rtina je odredište padobranaca iz cijelog svijeta, samo kratku vožnju od Ljubača.",
+      "slika": "img/mjesta/put-rtina.webp",
+      "tekst": [
+        "Ako volite adrenalin i tražite jedinstven način da doživite hrvatsku obalu, Rtina je pravo mjesto za vas. Ovo malo mjesto, udaljeno 25 kilometara od Zadra, od 2010. godine dočekuje padobrance iz cijelog svijeta.",
+        "Smještena između Velebita i Jadranskog mora, Rtina pruža nevjerojatan pogled na obalu i obližnje otoke Pag i Vir. U mjestu djeluje centar za padobranstvo s modernim sadržajima i iskusnim osobljem koje vas vodi kroz svaki korak.",
+        "Početnici mogu skočiti u tandemu s instruktorom ili naučiti samostalno skakati kroz programe obuke. A kad ste na zemlji, tu su lijepa plaža i mnoštvo mogućnosti za planinarenje i istraživanje.",
+        "Spremni podići odmor na nove visine? Rtina je samo kratku vožnju od Ljubača."
+      ]
+    }
+  ]
+}
